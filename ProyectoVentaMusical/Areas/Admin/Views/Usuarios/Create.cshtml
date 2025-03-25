@@ -1,0 +1,170 @@
+﻿@model Models.ApplicationUser
+
+@{
+    // Aqui solo le da el nombre a la pesta;a de arriba del navegador
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<br />
+<br />
+<h3 class="text-center">Crear un nuevo usuario</h3>
+<form method="POST" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="NumeroIdentificacion"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="NumeroIdentificacion" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+                <span asp-validation-for="NumeroIdentificacion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="UserName"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="UserName" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="Genero"></label>
+            </div>
+            <div class="col-8">
+                <select asp-for="Genero" class="form-control">
+                    <option value="">Seleccione un Genero</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="CorreoElectronico"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CorreoElectronico" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+                <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group row col-10 offset-1 mt-4">
+            <label for="password">Contraseña</label>
+            <div class="col-8">
+                <input type="password" id="password" name="password" class="form-control"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+                       title="Debe contener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial."
+                       required />
+                <span class="text-danger small" id="passwordError"></span>
+            </div>            
+        </div>
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="TipoTarjeta"></label>
+            </div>
+            <div class="col-8">
+                <select asp-for="TipoTarjeta" class="form-control">
+                    <option value="">Seleccione un Tipo de targeta</option>
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">Mastercard</option>
+                    <option value="AmericanExpress">American Express</option>
+                </select>
+                <span asp-validation-for="TipoTarjeta" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="DineroDisponible"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DineroDisponible" class="form-control" value="0" />
+                <span asp-validation-for="DineroDisponible" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="NumeroTarjeta"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="NumeroTarjeta" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+                <span asp-validation-for="NumeroTarjeta" class="text-danger"></span>
+            </div>
+        </div>
+@* 
+        <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="Contraseña"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Contraseña" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+        </div> *@
+
+       @*  <br />
+
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="IdPerfil"></label>
+            </div>
+            <div class="col-8">
+                <select asp-for="IdPerfil" class="form-control">
+                    <option value="">Seleccione un Rol de Usuario</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Contador</option>
+                    <option value="3">usuario</option>
+                </select>
+                <span asp-validation-for="IdPerfil" class="text-danger"></span>
+            </div>
+        </div> *@
+
+        <br />
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary form-control">Crear Usuario</button>
+            </div>
+            &nbsp;
+            <div class="col">
+                <a asp-action="Index" class="btn btn-success form-control">Volver atras</a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+

@@ -1,0 +1,75 @@
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.deps.json
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.dll
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.pdb
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.dll
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\refint\Models.dll
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.pdb
+C:\Proyectos VisualStudio\PrograAvanzada\ProyectoVentaMusical\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Desktop\ProyectoVentaMusical - Copy\Models\bin\Debug\net8.0\Models.deps.json
+D:\Desktop\ProyectoVentaMusical - Copy\Models\bin\Debug\net8.0\Models.dll
+D:\Desktop\ProyectoVentaMusical - Copy\Models\bin\Debug\net8.0\Models.pdb
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.sourcelink.json
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.dll
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\Models.pdb
+D:\Desktop\ProyectoVentaMusical - Copy\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Desktop\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.deps.json
+D:\Desktop\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.dll
+D:\Desktop\ProyectoVentaMusical\Models\bin\Debug\net8.0\Models.pdb
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.sourcelink.json
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.dll
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\Models.pdb
+D:\Desktop\ProyectoVentaMusical\Models\obj\Debug\net8.0\ref\Models.dll
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.deps.json
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.dll
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.pdb
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.sourcelink.json
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.dll
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\refint\Models.dll
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.pdb
+C:\Users\sebas\OneDrive - Universidad Americana Uam SRL\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\ref\Models.dll
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.deps.json
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.dll
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\bin\Debug\net8.0\Models.pdb
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.sourcelink.json
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.dll
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\refint\Models.dll
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\Models.pdb
+C:\Users\sebas\Documentos\GitHub\ProyectoMusical\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\bin\Debug\net8.0\Models.deps.json
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\bin\Debug\net8.0\Models.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\bin\Debug\net8.0\Models.pdb
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.pdb
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\ref\Models.dll

@@ -1,0 +1,106 @@
+﻿@model Models.ViewModels.CancionesVM
+@{
+	ViewData["Title"] = "Crear Canciones";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+	<li class="breadcrumb-item"><a asp-action="Index">Canciones</a></li>
+	<li class="breadcrumb-item active">Crear</li>
+</ol>
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3 bg-second-primary">
+		<h6 class="m-0 font-weight-bold text-white">Crear nueva canción</h6>
+	</div>
+	<form method="POST" asp-action="Create" enctype="multipart/form-data">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.CodigoGenero">Género Musical</label>
+									<select asp-for="Cancion.CodigoGenero" class="form-control">
+										<option value="">Seleccionar Género</option>
+										@foreach (var genero in Model.ListaGeneros)
+										{
+											<option value="@genero.CodigoGenero">@genero.Descripcion</option>
+										}
+									</select>
+									<span asp-validation-for="Cancion.CodigoGenero" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.CodigoAlbum">Álbum</label>
+									<select asp-for="Cancion.CodigoAlbum" class="form-control">
+										<option value="">Seleccionar Álbum</option>
+										@foreach (var album in Model.ListaAlbumes)
+										{
+											<option value="@album.CodigoAlbum">@album.NombreAlbum</option>
+										}
+									</select>
+									<span asp-validation-for="Cancion.CodigoAlbum" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.NombreCancion">Nombre Canción</label>
+									<input asp-for="Cancion.NombreCancion" class="form-control" placeholder="Debe digitar el nombre de la canción" />
+									<span asp-validation-for="Cancion.NombreCancion" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.LinkVideo">Link Video</label>
+									<input asp-for="Cancion.LinkVideo" class="form-control" placeholder="Ingrese la URL de la canción" />
+									<span asp-validation-for="Cancion.LinkVideo" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.Precio">Precion de la Canción</label>
+									<input asp-for="Cancion.Precio" class="form-control" placeholder="Ingrese el precio de la canción" />
+									<span asp-validation-for="Cancion.Precio" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="Cancion.CantidadDisponible">Cantidad Disponible</label>
+									<input asp-for="Cancion.CantidadDisponible" class="form-control" placeholder="Ingrese la cantidad disponible" />
+									<span asp-validation-for="Cancion.CantidadDisponible" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-12">
+									<label>Portada de la Canción</label>
+									<div class="custom-file">
+										<input type="file" name="archivos" id="subidaArchivo" class="custom-file-input" onchange="updateFileName(this)">
+										<span class="custom-file-label" id="fileLabel">Ningún archivo seleccionado</span>
+									</div>
+									<span asp-validation-for="Cancion.fotoCancion" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			<div class="row text-start">
+				<div class="col">
+					<button type="submit" class="btn btn-primary">Crear Canción</button>
+					<a asp-action="Index" class="btn btn-success">Volver atras</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+	<script>
+		function updateFileName(input) {
+			let fileName = input.files.length > 0 ? input.files[0].name : "Ningún archivo seleccionado";
+			document.getElementById("fileLabel").textContent = fileName;
+		}
+	</script>
+}

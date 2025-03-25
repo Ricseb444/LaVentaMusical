@@ -1,0 +1,101 @@
+﻿@model Models.ApplicationUser
+
+@{
+	ViewData["Title"] = "Editar Usuario";
+}
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3 bg-second-primary">
+		<h6 class="m-0 font-weight-bold text-white">Editar Usuario</h6>
+	</div>
+	<form method="POST" asp-action="Edit" enctype="multipart/form-data">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<input type="hidden" asp-for="Id" />
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="NumeroIdentificacion"></label>
+									<input asp-for="NumeroIdentificacion" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+									<span asp-validation-for="NumeroIdentificacion" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="NombreCompleto"></label>
+									<input asp-for="NombreCompleto" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+									<span asp-validation-for="NombreCompleto" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="Genero"></label>
+									<select asp-for="Genero" class="form-control">
+										<option value="">Seleccione un Genero</option>
+										<option value="Masculino">Masculino</option>
+										<option value="Femenino">Femenino</option>
+									</select>
+									<span asp-validation-for="Genero" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="Email"></label>
+									<input asp-for="Email" class="form-control" placeholder="Debe digitar el correo del usuario" />
+									<span asp-validation-for="Email" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="TipoTarjeta"></label>
+									<select asp-for="TipoTarjeta" class="form-control">
+										<option value="">Seleccione un Tipo de targeta</option>
+										<option value="VISA">Visa</option>
+										<option value="MASTERCARD">Mastercard</option>
+										<option value="AMERICAN EXPRESS">American Express</option>
+									</select>
+									<span asp-validation-for="TipoTarjeta" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="DineroDisponible"></label>
+									<input asp-for="DineroDisponible" class="form-control" value="0" />
+									<span asp-validation-for="DineroDisponible" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-12">
+									<label asp-for="NumeroTarjeta"></label>
+									<input asp-for="NumeroTarjeta" class="form-control" placeholder="Debe digitar el nombre real del/la artista" />
+									<span asp-validation-for="NumeroTarjeta" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			<div class="row">
+				<div class="col text-start">
+					<button type="submit" class="btn btn-primary">Editar Usuario</button>
+					<a asp-action="Index" class="btn btn-success">Volver atrás</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js" integrity="sha512-VCEWnpOl7PIhbYMcb64pqGZYez41C2uws/M/mDdGPy+vtEJHd9BqbShE4/VNnnZdr7YCPOjd+CBmYca/7WWWCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		tinymce.init({
+			selector: 'textarea',
+			plugins: 'lists',
+			menubar: 'file edit format'
+		});
+	</script>
+}
+

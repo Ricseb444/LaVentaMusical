@@ -1,0 +1,122 @@
+﻿@page
+@using Utilidades
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registro de Usuario";
+}
+
+<main class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="card p-4 shadow">
+                <h2 class="h4 mb-3">Crear nueva cuenta</h2>
+                <hr class="mb-4">
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <!-- Sección: Información Básica -->
+                <div class="mb-4">
+					<h3 class="h5 mb-3"><i class="fas fa-info-circle"></i> Información Básica</h3>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.NumeroIdentificacion" class="form-control" placeholder="Número de Identificación" />
+                        @* <label asp-for="Input.NumeroIdentificacion">Número de Identificación</label> *@
+                        <span asp-validation-for="Input.NumeroIdentificacion" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.NombreCompleto" class="form-control" placeholder="Nombre Completo" required />
+                        @* <label asp-for="Input.NombreCompleto">Nombre Completo</label> *@
+                        <span asp-validation-for="Input.NombreCompleto" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="Input.Genero" class="form-control" required>
+                            <option value="" disabled selected>Seleccione su género</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                        @* <label asp-for="Input.Genero">Género</label> *@
+                        <span asp-validation-for="Input.Genero" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" placeholder="Correo Electrónico" autocomplete="email" required />
+                        @* <label asp-for="Input.Email">Correo Electrónico</label> *@
+                        <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Sección: Seguridad -->
+                <div class="mb-4">
+                    <h3 class="h5 mb-3"><i class="fas fa-lock"></i> Seguridad</h3>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" class="form-control" placeholder="Contraseña" autocomplete="new-password" required />
+                        @* <label asp-for="Input.Password">Contraseña</label> *@
+                        <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirmar contraseña" autocomplete="new-password" required />
+                        @* <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label> *@
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Sección: Información Financiera -->
+                <div class="mb-4">
+                    <h3 class="h5 mb-3"><i class="fas fa-credit-card"></i> Información Financiera</h3>
+                    <div class="form-floating mb-3">
+                        <select asp-for="Input.TipoTarjeta" class="form-control" required>
+                            <option value="" disabled selected>Seleccione su Tipo de tarjeta</option>
+                            <option value="VISA">VISA</option>
+                            <option value="MASTERCARD">MASTERCARD</option>
+                            <option value="AMERICAN EXPRESS">AMERICAN EXPRESS</option>
+                        </select>
+                        @* <label asp-for="Input.TipoTarjeta">Tipo Tarjeta</label> *@
+                        <span asp-validation-for="Input.TipoTarjeta" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.NumeroTarjeta" class="form-control" placeholder="Número de Tarjeta" required />
+                        @* <label asp-for="Input.NumeroTarjeta">Número de Tarjeta</label> *@
+                        <span asp-validation-for="Input.NumeroTarjeta" class="text-danger small"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.DineroDisponible" class="form-control" placeholder="Dinero Disponible" required />
+                        @* <label asp-for="Input.DineroDisponible">Dinero Disponible</label> *@
+                        <span asp-validation-for="Input.DineroDisponible" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Sección: Roles (Solo para Administradores) -->
+                @if (User.IsInRole(CNT.Administrador))
+                {
+                    <div class="mb-4">
+                        <h3 class="h5 mb-3"><i class="fas fa-address-book"></i> Asignación de Rol</h3>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radUsuarioRole" value="@CNT.Administrador" id="rolAdmin" required />
+                                <label class="form-check-label" for="rolAdmin">@CNT.Administrador</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radUsuarioRole" value="@CNT.Contador" id="rolContador" required />
+                                <label class="form-check-label" for="rolContador">@CNT.Contador</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radUsuarioRole" value="@CNT.Usuario" id="rolUsuario" required />
+                                <label class="form-check-label" for="rolUsuario">@CNT.Usuario</label>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">
+                    <i class="fas fa-rocket"></i> Registrar Usuario
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

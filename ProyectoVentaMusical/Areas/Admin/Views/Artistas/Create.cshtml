@@ -1,0 +1,90 @@
+﻿@model Models.Data.Artistas
+
+@{
+	// Aqui solo le da el nombre a la pesta;a de arriba del navegador
+	ViewData["Title"] = "Crear Artistas";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+	<li class="breadcrumb-item"><a asp-action="Index">Artistas</a></li>
+	<li class="breadcrumb-item active">Crear</li>
+</ol>
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3 bg-second-primary">
+		<h6 class="m-0 font-weight-bold text-white">Crear un nuevo artista</h6>
+	</div>
+	<form method="POST" asp-action="Create" enctype="multipart/form-data">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="NombreArtistico"></label>
+									<input asp-for="NombreArtistico" class="form-control" placeholder="Ingresa el nombre artistico" />
+									<span asp-validation-for="NombreArtistico" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="NombreReal"></label>
+									<input asp-for="NombreReal" class="form-control" placeholder="Ingresa el nombre real del artista" />
+									<span asp-validation-for="NombreReal" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="FechaNacimiento"></label>
+									<input asp-for="FechaNacimiento" class="form-control" type="date" placeholder="Debe digitar la fecha de nacimiento" />
+									<span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="Nacionalidad"></label>
+									<input asp-for="Nacionalidad" class="form-control" placeholder="Ingresa su nacionalidad">
+									<span asp-validation-for="Nacionalidad" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-sm-6">
+									<label asp-for="LinkBiografia"></label>
+									<input asp-for="LinkBiografia" class="form-control" placeholder="Ingresa link biografía">
+									<span asp-validation-for="LinkBiografia" class="text-danger"></span>
+								</div>
+								<div class="form-group col-sm-6">
+									<label asp-for="FotoArtista"></label>
+									<div class="custom-file">
+										<input type="file" name="archivos" id="subidaArchivo" class="custom-file-input" onchange="updateFileName(this)">
+										<span class="custom-file-label" id="fileLabel">Ningún archivo seleccionado</span>
+									</div>
+									<span asp-validation-for="FotoArtista" class="text-danger"></span>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			<div class="row">
+				<div class="col text-start">
+					<button type="submit" class="btn btn-primary">Crear Artista</button>
+					<a asp-action="Index" class="btn btn-success">Volver atrás</a>
+				</div>
+			</div>
+		</div>
+	</form>	
+</div>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+	<script>
+		function updateFileName(input) {
+			let fileName = input.files.length > 0 ? input.files[0].name : "Ningún archivo seleccionado";
+			document.getElementById("fileLabel").textContent = fileName;
+		}
+	</script>
+}
+
+

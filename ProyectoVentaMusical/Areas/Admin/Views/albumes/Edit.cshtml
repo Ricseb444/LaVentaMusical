@@ -1,0 +1,99 @@
+﻿@model Models.ViewModels.AlbumesVM
+
+@{
+    ViewData["Title"] = "Editar Albumes";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Albumes</a></li>
+    <li class="breadcrumb-item active">Editar</li>
+</ol>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Editar Álbum</h6>
+    </div>
+    <form method="POST" asp-action="Edit" enctype="multipart/form-data">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="hidden" asp-for="Album.CodigoAlbum" />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label>Artista</label>
+                                    <select asp-for="Album.CodigoArtista" class="form-control">
+                                        <option value="">Seleccione un artista</option>
+                                        @foreach (var artista in Model.ListaArtistas)
+                                        {
+                                            <option value="@artista.CodigoArtista">@artista.NombreArtistico</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="Album.CodigoArtista" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label>Nombre Álbum</label>
+                                    <input asp-for="Album.NombreAlbum" class="form-control" placeholder="Debe digitar el nombre del Album" />
+                                    <span asp-validation-for="Album.NombreAlbum" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label>Año de Lanzamiento</label>
+                                    <input asp-for="Album.AñoLanzamiento" class="form-control" placeholder="Debe digitar el año de lanzamiento" />
+                                    <span asp-validation-for="Album.AñoLanzamiento" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label>Portada del Álbum</label>
+                                    <div class="custom-file">
+                                        <input type="file" name="archivos" id="subidaArchivo" class="custom-file-input" onchange="updateFileName(this)">
+                                        <span class="custom-file-label" id="fileLabel">Ningún archivo seleccionado</span>
+                                    </div>
+                                    <span asp-validation-for="Album.ImagenAlbum" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img id="imgLogo" style="max-width:200px;" src="@Model.Album.ImagenAlbum" class="rounded" alt="Logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col text-start">
+                    <button type="submit" class="btn btn-primary">Editar Articulo</button>
+                    <a asp-action="Index" class="btn btn-success">Volver atrás</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js" integrity="sha512-VCEWnpOl7PIhbYMcb64pqGZYez41C2uws/M/mDdGPy+vtEJHd9BqbShE4/VNnnZdr7YCPOjd+CBmYca/7WWWCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+    <script>
+        function updateFileName(input) {
+            let fileName = input.files.length > 0 ? input.files[0].name : "Ningún archivo seleccionado";
+            document.getElementById("fileLabel").textContent = fileName;
+        }
+    </script>
+}
+
