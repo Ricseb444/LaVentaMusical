@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\views\\comprar\\carritocompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\comprar\\carritocompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\views\\canciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\canciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\usuarios\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\usuarios\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\views\\comprar\\pagar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\comprar\\pagar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\views\\historial\\historialventas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\historial\\historialventas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\controllers\\cancionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\controllers\\cancionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|d:\\desarrollo\\vsc2022\\proyectomusical-iconupdate\\proyectoventamusical\\areas\\admin\\views\\historial\\historialcompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\historial\\historialcompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,53 +67,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarritoCompras.cshtml",
-              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
-              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAG8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T01:48:23.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Pagar.cshtml",
-              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T01:29:18.151Z",
+              "WhenOpened": "2025-03-26T06:09:38.49Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Canciones\\Create.cshtml",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Canciones\\Create.cshtml",
-              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Canciones\\Create.cshtml",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Canciones\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAHAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Usuarios\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Usuarios\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Usuarios\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Usuarios\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAMoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T01:28:26.528Z",
+              "WhenOpened": "2025-03-26T06:08:51.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAEwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T06:00:46.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CancionesController.cs",
-              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\CancionesController.cs",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\CancionesController.cs",
-              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\CancionesController.cs",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\CancionesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T01:28:20.741Z"
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFAAAACCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T05:59:35.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistorialVentas.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialVentas.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialVentas.cshtml",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialVentas.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialVentas.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T05:52:27.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HistorialCompras.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialCompras.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialCompras.cshtml",
+              "ToolTip": "D:\\Desarrollo\\VSC2022\\ProyectoMusical-IconUpdate\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialCompras.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialCompras.cshtml",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAAHoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T05:30:16.925Z",
+              "EditorCaption": ""
             }
           ]
         }

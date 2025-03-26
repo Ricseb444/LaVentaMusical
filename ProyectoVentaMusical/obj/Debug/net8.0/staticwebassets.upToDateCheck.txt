@@ -63,7 +63,7 @@ wwwroot\js\artistas.js
 wwwroot\js\canciones.js
 wwwroot\js\comprar.js
 wwwroot\js\generos.js
-wwwroot\js\HistorialCliente.js
+wwwroot\js\Historial.js
 wwwroot\js\pagar.js
 wwwroot\js\sb-admin-2.js
 wwwroot\js\sb-admin-2.min.js

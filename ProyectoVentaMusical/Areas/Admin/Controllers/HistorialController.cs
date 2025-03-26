@@ -34,7 +34,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
 
             if (!ventas.Any())
             {
-                ViewBag.Menssage = "No has realizado ninguna compra.";
+                ViewBag.Message = "No has realizado ninguna compra. 😥";
                 return View();
             }
 
@@ -71,6 +71,27 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 }).ToListAsync();
 
             return Json(detalles);
+        }
+
+        [HttpGet]
+        public IActionResult HistorialVentas()
+        {
+            var ventas = _context.Ventas.ToList();
+
+            var detalles = _context.DetalleVentas
+                .Include(dv => dv.CodigoCancionNavigation)
+                .Where(dv => ventas.Select(v => v.IdVenta).Contains(dv.IdVenta))
+                .ToList();
+
+            var canciones = detalles.Select(dv => dv.CodigoCancionNavigation).Distinct().ToList();
+
+            var ViewModel = new HistorialMostrarVM
+            {
+                Ventas = ventas,
+                DetalleVentas = detalles,
+                Canciones = canciones
+            };
+            return View(ViewModel);
         }
     }
 }

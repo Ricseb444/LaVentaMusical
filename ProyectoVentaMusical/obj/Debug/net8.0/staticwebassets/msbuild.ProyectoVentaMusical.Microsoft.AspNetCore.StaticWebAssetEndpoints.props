@@ -780,14 +780,14 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1fMml5oKEkxaSQ4xmUfGwEs1T915xQteJrWcLPjd7Ww="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3205"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00221fMml5oKEkxaSQ4xmUfGwEs1T915xQteJrWcLPjd7Ww=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:45:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/HistorialCliente.9marahypw2.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\HistorialCliente.js'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/Historial.9marahypw2.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Historial.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9marahypw2"},{"Name":"integrity","Value":"sha256-fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ="},{"Name":"label","Value":"_content/ProyectoVentaMusical/js/HistorialCliente.js"}]]]></EndpointProperties>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9marahypw2"},{"Name":"integrity","Value":"sha256-fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ="},{"Name":"label","Value":"_content/ProyectoVentaMusical/js/Historial.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:20:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/HistorialCliente.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\HistorialCliente.js'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/Historial.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Historial.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:20:00 GMT"}]]]></ResponseHeaders>

@@ -142,7 +142,7 @@ namespace ProyectoVentaMusical.Areas.Identity.Pages.Account
                 user.NombreCompleto = Input.NombreCompleto;
                 user.Genero = Input.Genero;
                 user.TipoTarjeta = Input.TipoTarjeta;
-                user.DineroDisponible = Input.DineroDisponible;
+                user.DineroDisponible = 0;
                 user.NumeroTarjeta = Input.NumeroTarjeta;
 
                 var result = await _userManager.CreateAsync(user, Input.Password);

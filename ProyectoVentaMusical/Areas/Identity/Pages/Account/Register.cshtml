@@ -78,11 +78,11 @@
                         @* <label asp-for="Input.NumeroTarjeta">Número de Tarjeta</label> *@
                         <span asp-validation-for="Input.NumeroTarjeta" class="text-danger small"></span>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input asp-for="Input.DineroDisponible" class="form-control" placeholder="Dinero Disponible" required />
-                        @* <label asp-for="Input.DineroDisponible">Dinero Disponible</label> *@
+                    <!-- Quité el campo de dinero disponible pues este no debería de poder escogerse y por defecto debe venir en 0 -->
+                    @* <div class="form-floating mb-3">
+                        <input asp-for="Input.DineroDisponible" class="form-control" placeholder="Dinero Disponible" required />                        
                         <span asp-validation-for="Input.DineroDisponible" class="text-danger small"></span>
-                    </div>
+                    </div> *@
                 </div>
 
                 <!-- Sección: Roles (Solo para Administradores) -->
