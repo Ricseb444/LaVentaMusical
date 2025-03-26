@@ -2,22 +2,25 @@
 
 
 <div class="container mt-5">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h4 class="card-title mb-4">Selecciona un Método de Pago</h4>
-            <form method="POST" asp-action="ProcesarPago" id="paymentForm">
+	<div class="card shadow-sm">
+		<div class="card-header py-3 bg-second-primary">
+			<h6 class="m-0 font-weight-bold text-white">Selecciona un Método de Pago</h6>
+		</div>
+		<form method="POST" asp-action="ProcesarPago" id="paymentForm">
+			<div class="card-body">
+				<div class="mb-3">
+					<div class="col-sm-6">
+						<label asp-for="VENTAS.TipoPago" class="form-label">Tipo de Pago</label>
+						<select class="form-control" asp-for="VENTAS.TipoPago" required>
+							<option value="" selected disabled>Selecciona método</option>
+							<option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+							<option value="Sinpe">Sinpe</option>
+							<option value="Dinero Disponible">Dinero Disponible</option>
+						</select>
+					</div>
+				</div>
 
-                <div class="mb-3">
-                    <label asp-for="VENTAS.TipoPago" class="form-label">Tipo de Pago</label>
-                    <select class="form-select" asp-for="VENTAS.TipoPago" required>
-                        <option value="" selected disabled>Selecciona método</option>
-                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-                        <option value="Sinpe">Sinpe</option>
-                        <option value="Dinero Disponible">Dinero Disponible</option>
-                    </select>
-                </div>
-
-                @* <div id="creditCardInfo" class="mb-3" style="display:none;">
+				@* <div id="creditCardInfo" class="mb-3" style="display:none;">
                     <label class="form-label">Nombre del Titular</label>
                     <input asp-for="VENTAS.NombreTitular" type="text" class="form-control mb-2" placeholder="Titular de la tarjeta" />
 
@@ -36,15 +39,22 @@
                     </div>
                 </div> *@
 
-                <div id="sinpeInfo" class="mb-3" style="display:none;">
-                    <button type="submit" class="btn btn-success">Confirmar Pago SINPE</button>
-                </div>
+				<div id="sinpeInfo" class="mb-3" style="display:none;">
+					<button type="submit" class="btn btn-success">Confirmar Pago SINPE</button>
+				</div>
 
-                <button type="submit" class="btn btn-primary">Realizar Pago</button>
-            </form>
-
-        </div>
-    </div>
+				
+			</div>	
+			<div class="card-footer">
+				<div class="row">
+					<div class="col text-start">
+						<button type="submit" class="btn btn-primary">Realizar Pago</button>
+						<a asp-action="CarritoCompras" class="btn btn-success">Volver atras</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 
 <!-- Referencias JS -->

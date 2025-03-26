@@ -68,3 +68,4 @@ D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Utilidades\obj\Debug\net8.0\Uti
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Utilidades\obj\Debug\net8.0\Utilidades.pdb
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Utilidades\obj\Debug\net8.0\Utilidades.sourcelink.json

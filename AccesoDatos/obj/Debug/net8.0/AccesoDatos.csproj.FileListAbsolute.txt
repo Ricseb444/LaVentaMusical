@@ -116,3 +116,4 @@ D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\AccesoDatos\obj\Debug\net8.0\re
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\AccesoDatos\obj\Debug\net8.0\AccesoDatos.pdb
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\AccesoDatos\obj\Debug\net8.0\AccesoDatos.genruntimeconfig.cache
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\AccesoDatos\obj\Debug\net8.0\ref\AccesoDatos.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\AccesoDatos\obj\Debug\net8.0\AccesoDatos.sourcelink.json

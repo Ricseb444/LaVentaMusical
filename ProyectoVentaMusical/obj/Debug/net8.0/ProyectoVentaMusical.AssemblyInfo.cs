@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProyectoVentaMusical")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd75b4fde67afaf80314a51dc95adba0c6c256cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProyectoVentaMusical")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProyectoVentaMusical")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

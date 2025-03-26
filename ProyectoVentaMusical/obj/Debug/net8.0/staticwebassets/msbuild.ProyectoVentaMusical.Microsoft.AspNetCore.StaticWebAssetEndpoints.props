@@ -1576,13 +1576,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProyectoVentaMusical.zny57mu3h8.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:19:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 01:54:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/ProyectoVentaMusical.zny57mu3h8.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ProyectoVentaMusical.zny57mu3h8.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zny57mu3h8"},{"Name":"integrity","Value":"sha256-QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg="},{"Name":"label","Value":"_content/ProyectoVentaMusical/ProyectoVentaMusical.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:19:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1138"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022QaKeFyHoxlbOTDK/gehNMcKGcByzfQAAbC\u002BX2/zMNrg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 01:54:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/scss/navs/_global.ktyzgqanqq.scss">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\scss\navs\_global.scss'))</AssetFile>

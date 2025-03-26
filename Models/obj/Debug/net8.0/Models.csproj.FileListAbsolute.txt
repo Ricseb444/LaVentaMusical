@@ -73,3 +73,4 @@ D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\refint\Models.dll
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.pdb
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\Models\obj\Debug\net8.0\Models.sourcelink.json
