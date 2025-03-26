@@ -87,8 +87,7 @@
               "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Usuarios\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAMoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T06:08:51.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T06:08:51.274Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAEwHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T06:00:46.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T06:00:46.986Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAFAAAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T05:59:35.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T05:59:35.221Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialVentas.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T05:52:27.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T05:52:27.029Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Historial\\HistorialCompras.cshtml",
               "ViewState": "AgIAAG4AAAAAAAAAAAAAAHoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T05:30:16.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T05:30:16.925Z"
             }
           ]
         }
