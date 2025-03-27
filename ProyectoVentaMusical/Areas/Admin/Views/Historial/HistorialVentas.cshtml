@@ -1,14 +1,15 @@
-﻿@model Models.ViewModels.HistorialMostrarVM
+﻿@using Utilidades
+@model Models.ViewModels.HistorialMostrarVM
 @{
 	ViewData["Title"] = "Historial de Ventas";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Estilos {
-	<link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
-	<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
-	<link href="~/vendor/jquery-ui/jquery-ui.css" rel="stylesheet">
+		<link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+			<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+				<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+				<link href="~/vendor/jquery-ui/jquery-ui.css" rel="stylesheet">
 }
 
 <ol class="breadcrumb mb-4 mt-4">
@@ -40,28 +41,41 @@ else
 		</div>
 		<div class="card-body">
 			<div class="form-row align-items-end">
-				<div class="form-group col-sm-3">
-					<label for="cboBuscarPor">Buscar por</label>
-					<select class="form-control form-control-sm" id="cboBuscarPor">
-						<option value="fecha">Fechas</option>
-						<option value="Usuario">Usuario</option>
-					</select>
-				</div>
-				<div class="form-group col-sm-3 busqueda-fecha">
-					<label for="txtFechaInicio">Fecha Inicio</label>
-					<input type="text" class="form-control form-control-sm" id="txtFechaInicio" autocomplete="off">
-				</div>
-				<div class="form-group col-sm-3 busqueda-fecha">
-					<label for="txtFechaFin">Fecha Fin</label>
-					<input type="text" class="form-control form-control-sm" id="txtFechaFin" autocomplete="off">
-				</div>
-				<div class="form-group col-sm-3 busqueda-venta">
-					<label for="txtUsuario">Usuario</label>
-					<input type="text" class="form-control form-control-sm" id="txtUsuario" autocomplete="off">
-				</div>
-				<div class="form-group col-sm-3">
-					<button class="btn btn-success btn-block btn-sm" type="button" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
-				</div>
+				@if(User.IsInRole(CNT.Contador))
+				{
+					<div class="form-group col-sm-3">
+						<label for="cboBuscarPor">Buscar por</label>
+						<select class="form-control form-control-sm" id="cboBuscarPor">
+							<option value="fecha">Fechas</option>
+							<option value="Usuario">Usuario</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-3 busqueda-fecha">
+						<label for="fechaInicio">Fecha Inicio</label>
+						<input type="date" class="form-control form-control-sm" id="fechaInicio" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3 busqueda-fecha">
+						<label for="fechaFin">Fecha Fin</label>
+						<input type="date" class="form-control form-control-sm" id="fechaFin" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3 busqueda-usuario">
+						<label for="filtroUsuario">Usuario</label>
+						<input type="text" class="form-control form-control-sm" id="filtroUsuario" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3">
+						<button class="btn btn-success btn-block btn-sm" type="button" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
+					</div>
+				}
+				@if (User.IsInRole(CNT.Administrador))
+				{
+					<div class="form-group col-sm-3 busqueda-usuario">
+						<label for="filtroUsuario">Usuario</label>
+						<input type="text" class="form-control form-control-sm" id="filtroUsuario" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3">
+						<button class="btn btn-success btn-block btn-sm" type="button" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
+					</div>
+				}
 			</div>
 
 			<hr />
@@ -84,7 +98,7 @@ else
 							@foreach (var venta in Model.Ventas)
 							{
 								<tr>
-									<td>@venta.FechaCompra?.ToString("dd/MM/yyyy")</td>
+									<td>@venta.FechaCompra?.ToString("yyyy-MM-dd")</td>
 									<td>@venta.IdVenta</td>
 									<td>@venta.IdUsuario</td>
 									<td>@venta.TipoPago</td>

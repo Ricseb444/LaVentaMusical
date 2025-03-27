@@ -780,17 +780,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1fMml5oKEkxaSQ4xmUfGwEs1T915xQteJrWcLPjd7Ww="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3205"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00221fMml5oKEkxaSQ4xmUfGwEs1T915xQteJrWcLPjd7Ww=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:45:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/Historial.9marahypw2.js">
+    <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/Historial.62bnzeusd7.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Historial.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9marahypw2"},{"Name":"integrity","Value":"sha256-fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ="},{"Name":"label","Value":"_content/ProyectoVentaMusical/js/Historial.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:20:00 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"62bnzeusd7"},{"Name":"integrity","Value":"sha256-vnIihV0vJEtGxiJHRXVTE/pFDlho76Y4ucKvPWnCjXc="},{"Name":"label","Value":"_content/ProyectoVentaMusical/js/Historial.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3983"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vnIihV0vJEtGxiJHRXVTE/pFDlho76Y4ucKvPWnCjXc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 20:43:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/Historial.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Historial.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022fwNbY\u002BvnixuKwM5Qit3bYPoYYR7k7iW0nhfW4NbDdWQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:20:00 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vnIihV0vJEtGxiJHRXVTE/pFDlho76Y4ucKvPWnCjXc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3983"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vnIihV0vJEtGxiJHRXVTE/pFDlho76Y4ucKvPWnCjXc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 20:43:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ProyectoVentaMusical/js/pagar.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\pagar.js'))</AssetFile>
