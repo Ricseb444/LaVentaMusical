@@ -92,46 +92,6 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 Canciones = canciones
             };
             return View(ViewModel);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Filtrar(string usuario, DateTime? fechaInicio, DateTime? fechaFin)
-        {
-            var query = _context.Ventas.AsQueryable();
-
-            if (!string.IsNullOrEmpty(usuario))
-            {
-                query = query.Where(v => v.IdUsuario.Contains(usuario));
-            }
-
-            if (fechaInicio.HasValue)
-            {
-                query = query.Where(v => v.FechaCompra <= fechaInicio.Value);
-            }
-
-            if (fechaFin.HasValue)
-            {
-                query = query.Where(v => v.FechaCompra <= fechaFin.Value);
-            }
-
-            var ventas = await query.ToListAsync();
-
-            if (!ventas.Any())
-            {
-                return Json(new { message = "No hay ventas registradas con esos criterios." });
-            }
-
-            var data = ventas.Select( v => new
-            {
-                v.IdVenta,
-                v.IdUsuario,
-                FechaCompra = v.FechaCompra.HasValue ? v.FechaCompra.Value.ToString("dd/MM/yyyy") : "Sin fecha",
-                v.Subtotal,
-                v.Total,
-                v.TipoPago
-            }).ToList();
-
-            return Json(data);
-        }
+        }        
     }
 }

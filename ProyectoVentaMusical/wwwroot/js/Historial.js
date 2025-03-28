@@ -1,28 +1,95 @@
-﻿// Sirve para cargar las funciones del datatable
-$(document).ready(function () {
-	$('#tbventa').DataTable({		
-		"paging": true,         // Habilita el paginado
-		"lengthMenu": [5, 10, 25, 50],  // Opciones de registros por página
-		"pageLength": 5,        // Cantidad inicial de registros por página
-		"ordering": true,       // Habilita el ordenamiento
-		"info": true,           // Muestra información de la tabla
-		"searching": true,      // Habilita la búsqueda
-		"responsive": true,
-		"language": {
-			"lengthMenu": "Mostrar _MENU_ registros por página",
-			"zeroRecords": "No se encontraron resultados",
-			"info": "Mostrando página _PAGE_ de _PAGES_",
-			"infoEmpty": "No hay registros disponibles",
-			"infoFiltered": "(filtrado de _MAX_ registros en total)",
-			"search": "Buscar:",
-			"paginate": {
-				"first": "Primero",
-				"last": "Último",
-				"next": "Siguiente",
-				"previous": "Anterior"
-			}
-		}
-	});
+﻿$(document).ready(function () {
+    // Verificar si la tabla ya está inicializada y destruirla si es necesario
+    if ($.fn.dataTable.isDataTable('#tbventa')) {
+        $('#tbventa').DataTable().destroy();
+    }
+
+    /************ Sección para la inicialización del DataTable ************/
+
+    // Inicializa la tabla
+    let table = $('#tbventa').DataTable({
+        "paging": true,
+        "lengthMenu": [5, 10, 25, 50],
+        "pageLength": 5,
+        "ordering": true,
+        "info": true,
+        "searching": true,
+        "responsive": true,
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros en total)",
+            "search": "Buscar:",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+    });
+
+    /************ Sección para los filtros ************/
+
+    // Filtro por rango de fechas
+    $('#fechaInicio, #fechaFin').on('keyup change', function () {
+        let fechaInicio = $('#fechaInicio').val();
+        let fechaFin = $('#fechaFin').val();
+
+        // Limpiar filtros anteriores
+        $.fn.dataTable.ext.search.length = 0;
+
+        // Función personalizada para filtrar por rango de fechas
+        $.fn.dataTable.ext.search.push(function (settings, data) {
+            let fecha = data[0]; // Índice de la columna "FechaCompra"
+            let fechaCompra = new Date(fecha);
+
+            if (fechaInicio && new Date(fechaInicio) > fechaCompra) return false;
+            if (fechaFin && new Date(fechaFin) < fechaCompra) return false;
+            return true;
+        });
+
+        table.draw();
+    });
+
+    // Filtro por usuario
+    $('#filtroUsuario').on('keyup change', function () {
+        let usuario = $('#filtroUsuario').val().trim();
+        table.column(2).search(usuario).draw();
+    });
+
+    /************ Sección para el botón toggle que cambia el tipo de filtro ************/
+
+    function toggleFields() {
+        var selectedOption = $('#cboBuscarPor').val();
+
+        if (selectedOption === 'fecha') {
+            $('.busqueda-usuario input').val('');
+            $('.busqueda-fecha').show();
+            $('.busqueda-usuario').hide();
+        } else if (selectedOption === 'Usuario') {
+            $.fn.dataTable.ext.search.length = 0;
+            $('.busqueda-fecha input').val('');
+            $('.busqueda-fecha').hide();
+            $('.busqueda-usuario').show();
+        }
+        table.search('').columns().search('').draw();
+        
+    }
+
+    if (userRole === "contador") {
+        $('#cboBuscarPor').val('fecha');
+        $('.busqueda-fecha').show();
+        $('.busqueda-usuario').hide();
+    } else if (userRole === "administrador") {
+        $('#cboBuscarPor').val('Usuario');
+        $('.busqueda-usuario').show();
+        $('.busqueda-fecha').hide();
+    }
+
+    $('#cboBuscarPor').change(toggleFields);
 });
 
 // Sirve para mostrar los detalles de cada venta.
@@ -63,78 +130,4 @@ $(document).ready(function () {
 			console.error("Error en la petición AJAX:", status, error);
 		});
 	});
-});
-
-// Se utiliza para filtrar las ventas por fecha
-$(document).ready(function () {
-	let table = $('#tbventa').DataTable({
-		"processing": true,
-		"serverSide": false, // No se usa servidor para cargar datos
-		"paging": true, // Habilitar paginación
-		"searching": true, // Habilitar búsqueda
-		"ordering": true // Habilitar ordenamiento
-	});
-
-	// Filtro por rango de fechas
-	$('#fechaInicio, #fechaFin').on('keyup change', function () {
-		let fechaInicio = $('#fechaInicio').val();
-		let fechaFin = $('#fechaFin').val();
-
-		// Limpiar filtros anteriores
-		$.fn.dataTable.ext.search.length = 0;
-
-		// Función personalizada para filtrar por rango de fechas
-		$.fn.dataTable.ext.search.push(function (settings, data) {
-			let fecha = data[0]; // Índice de la columna "FechaCompra"
-			let fechaCompra = new Date(fecha);
-
-			if (fechaInicio && new Date(fechaInicio) > fechaCompra) return false;
-			if (fechaFin && new Date(fechaFin) < fechaCompra) return false;
-			return true;
-		});
-
-		table.draw();
-	});
-});
-
-// Se utiliza para filtrar las ventas por usuario
-$(document).ready(function () {
-	let table = $('#tbventa').DataTable({
-		"processing": true,
-		"serverSide": false,
-		"processing": true,
-		"serverSide": false, 
-		"paging": true, 
-		"searching": true,
-		"ordering": true 
-		
-	});
-
-	// Filtros personalizados para usuario y rango de fechas
-	$('#filtroUsuario').on('keyup change', function () {
-		let usuario = $('#filtroUsuario').val().trim();
-		table.column(2).search(usuario).draw(); 
-	});
-});
-
-// Se utiliza para mostrar u ocultar los filtros de busqueda requeridos (Fecha/Usuario)
-$(document).ready(function () {
-	// Función para mostrar/ocultar campos según la selección
-	function toggleFields() {
-		var selectedOption = $('#cboBuscarPor').val();
-
-		if (selectedOption === 'fecha') {
-			$('.busqueda-fecha').show();
-			$('.busqueda-usuario').hide();
-		} else if (selectedOption === 'Usuario') {
-			$('.busqueda-fecha').hide();
-			$('.busqueda-usuario').show();
-		}
-	}
-
-	// Ejecutar la función al cargar la página
-	toggleFields();
-
-	// Ejecutar la función cada vez que cambie la selección
-	$('#cboBuscarPor').change(toggleFields);
 });

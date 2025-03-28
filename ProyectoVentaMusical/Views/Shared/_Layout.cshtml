@@ -162,8 +162,7 @@
 								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
 								   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span class="mr-2 d-none d-lg-inline text-gray-600 small">@User.Identity?.Name</span>
-									<img class="img-profile rounded-circle"
-										 src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300">
+									<img class="img-profile rounded-circle" id="profileImage" src="" alt="Profile Image">
 								</a>
 								<!-- Dropdown - User Information -->
 								<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -174,8 +173,8 @@
 									</a>
 									<div class="dropdown-divider"></div>
 									<form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
-										  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
-										<button type="submit" class="btn btn-link text-dark" style="text-decoration: none;">
+										  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" >
+										<button type="submit" class="btn btn-link text-dark" style="text-decoration: none; padding: 0; font-size: 0.925rem;">
 											<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 											Salir
 										</button>
