@@ -56,6 +56,7 @@ wwwroot\img\Monstruo_1.jpg
 wwwroot\img\Monstruo_10.jpg
 wwwroot\img\Monstruo_11.jpg
 wwwroot\img\Monstruo_12.jpg
+wwwroot\img\Monstruo_13.png
 wwwroot\img\Monstruo_2.jpg
 wwwroot\img\Monstruo_3.jpg
 wwwroot\img\Monstruo_4.jpg
@@ -64,6 +65,7 @@ wwwroot\img\Monstruo_6.jpg
 wwwroot\img\Monstruo_7.jpg
 wwwroot\img\Monstruo_8.jpg
 wwwroot\img\Monstruo_9.jpg
+wwwroot\img\pp.png
 wwwroot\img\undraw_posting_photo.svg
 wwwroot\img\undraw_profile.svg
 wwwroot\img\undraw_profile_1.svg

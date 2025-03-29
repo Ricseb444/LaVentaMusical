@@ -100,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSGlzdG9yaWFsXEhpc3RvcmlhbFZlbnRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Desarrollo/VSC2022/ProyectoMusical-IconUpdate/ProyectoVentaMusical/Areas/Admin/Views/Plantilla/PDFVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhbnRpbGxhXFBERlZlbnRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Desarrollo/VSC2022/ProyectoMusical-IconUpdate/ProyectoVentaMusical/Areas/Admin/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

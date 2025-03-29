@@ -24,14 +24,14 @@ function cargarDatatable() {
                         return `<img style="height:120px;" src="${rutaImagen}" class="rounded mx-auto d-block">`;
                     }
                     return "Sin imagen";
-                }
+                }, "orderable": false
             },
             {
                 "data": "codigoGenero",
                 "render": function (data) {
                     return `<button onclick="window.location.href='/Admin/Generos/Edit/${data}'" title="Editar" class="btn btn-success btn-sm" style="margin-right: 8px;"><i class="fas fa-pencil-alt"></i></button>` +
                         `<button onclick="Delete('/Admin/Generos/Delete/${data}')" title="Eliminar" class="btn btn-danger btn-sm ms-2"><i class="fas fa-trash-alt"></i></button>`;
-                }, "width": "25%"
+                }, "width": "25%", "orderable": false
             }
         ],
         "language": {

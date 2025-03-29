@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.Data;
 using ProyectoVentaMusical.Data;
+using ProyectoVentaMusical.Utilidades.Extensiones;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 
 namespace ProyectoVentaMusical
 {
@@ -11,6 +14,10 @@ namespace ProyectoVentaMusical
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var context = new CustomAssemblyLoadContext();
+            context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "Utilidades/LibreriaPDF/libwkhtmltox.dll"));
+            builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("ConexionSQL") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");

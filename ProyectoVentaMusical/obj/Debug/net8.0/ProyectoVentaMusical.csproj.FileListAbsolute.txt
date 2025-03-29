@@ -1694,3 +1694,8 @@ D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\obj\Debug\
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\obj\Debug\net8.0\ProyectoVentaMusical.genruntimeconfig.cache
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\obj\Debug\net8.0\ref\ProyectoVentaMusical.dll
 D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\obj\Debug\net8.0\ProyectoVentaMusical.sourcelink.json
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\bin\Debug\net8.0\Utilidades\LibreriaPDF\libwkhtmltox.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\bin\Debug\net8.0\Utilidades\LibreriaPDF\libwkhtmltox.dylib
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\bin\Debug\net8.0\Utilidades\LibreriaPDF\libwkhtmltox.so
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\bin\Debug\net8.0\AutoMapper.dll
+D:\Desarrollo\VSC2022\ProyectoMusical-IconUpdate\ProyectoVentaMusical\bin\Debug\net8.0\DinkToPdf.dll

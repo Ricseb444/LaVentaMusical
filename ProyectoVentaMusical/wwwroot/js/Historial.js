@@ -128,6 +128,9 @@ $(document).ready(function () {
 			console.log("Tabla actualizada.");
 		}).fail(function (xhr, status, error) {
 			console.error("Error en la petición AJAX:", status, error);
-		});
+        });
+
+        $("#linkImprimir").attr("href",`MostrarPDFVenta?IdVenta=${idVenta}`)
+
 	});
 });
