@@ -1,0 +1,37 @@
+﻿@model Models.Data.Ventas
+
+@if (Model != null)
+{
+	<div class="container mt-5">
+		<div class="card shadow-sm">
+			<div class="card-body text-center">
+				<h3 class="card-title text-success">¡Gracias por tu compra!</h3>
+				<p>Tu pago ha sido procesado con éxito.</p>
+				<hr />
+				<h5>Detalles de la Compra</h5>
+				<p><strong>Fecha:</strong>@Model.FechaCompra</p>
+				<p><strong>Método de Pago:</strong>@Model.TipoPago</p>
+				<p><strong>Total Pagado:</strong>@Model.Total.ToString("N2")</p>
+				<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
+					<i class="fas fa-left-long"></i> Volver al Inicio
+				</a>
+			</div>
+		</div>
+	</div>
+}
+else
+{
+	<div class="container mt-5">
+		<div class="card shadow-sm">
+			<div class="card-body text-center">
+				<h3 class="card-title text-success">¡Gracias por tu compra!</h3>
+				<p>Parece que hubo un error al confirmar tu compra</p>
+				<i class="fas fa-face-sad-tear"></i>
+				<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
+					<i class="fas fa-left-long"></i> Volver al Inicio
+				</a>
+			</div>
+		</div>
+	</div>
+}
+

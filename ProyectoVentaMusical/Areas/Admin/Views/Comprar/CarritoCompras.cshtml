@@ -1,0 +1,84 @@
+﻿@model Models.ViewModels.CarritoMostrarVM
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Carrito de Compras</title>
+</head>
+
+<body>
+	<div class="container mt-5">
+		<div class="card shadow mb-4">
+			<div class="card-header py-3 bg-second-primary">
+				<h6 class="m-0 font-weight-bold text-white">Tu Carrito de Compras</h6>
+			</div>
+			<div class="card-body">
+				@if (Model != null && Model.DetalleCarrito != null && Model.DetalleCarrito.FirstOrDefault() != null)
+				{
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th>Nombre Cancion</th>
+								<th>Cantidad</th>
+								<th>Precio</th>
+								<th>Total</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model.DetalleCarrito)
+							{
+								<tr>
+									<td>@item.CodigoCancionNavigation.NombreCancion</td>
+									<td>
+										<input type="number" class="form-control" value="@item.Cantidad" min="1" onchange="actualizarCantidad(@item.IdDetalleCarrito, this.value)" />
+									</td>
+									<td>@item.PrecioUnitario.ToString("C")</td>
+									<td>@($"₡{Math.Round(item.Cantidad * item.PrecioUnitario, 0)}")</td>
+									<td>
+										<button class="btn btn-danger" onclick="eliminarProducto(@item.IdDetalleCarrito)">Eliminar</button>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>		
+					<div>
+						<p><strong>Total:</strong> @Model.DetalleCarrito.Sum(item => item.Cantidad * item.PrecioUnitario).ToString("C")</p>
+					</div>
+				}
+				else
+				{
+					<div class="text-center">
+						<i class="fas fa-shopping-cart fa-5x text-muted mb-3"></i>
+						<h5 class="card-title">Vaya, parece que...</h5>
+						<p class="card-text">@ViewBag.Message</p>
+					</div>
+				}
+			</div>
+			<div class="card-footer text-center">
+				<div class="row">
+					<div class="col text-start">
+						@if (Model != null && Model.DetalleCarrito != null && Model.DetalleCarrito.FirstOrDefault() != null)
+						{
+							<div class="text start">								
+								<button class="btn btn-success" onclick="window.location.href='@Url.Action("Pagar", "Comprar")'">Proceder al Pago</button>
+								<button class="btn btn-primary" onclick="window.location.href='@Url.Action("Index", "Comprar")'">Seguir Comprando</button>
+							</div>							
+						}
+						else 
+						{ 
+							<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
+								<i class="fas fa-cart-plus me-2"></i>Añadir canciones al carrito
+							</a>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+	</div>
+</body>
+</html>

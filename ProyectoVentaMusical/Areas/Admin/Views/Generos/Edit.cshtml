@@ -1,0 +1,74 @@
+﻿@model Models.Data.GenerosMusicales
+
+@{
+    ViewData["Title"] = "Editar Genero Musical";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Albumes</a></li>
+    <li class="breadcrumb-item active">Editar</li>
+</ol>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Editar Álbum</h6>
+    </div>
+    <form method="POST" asp-action="Edit" enctype="multipart/form-data">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="hidden" asp-for="CodigoGenero" />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label>Nombre del Género</label>
+                                    <input asp-for="Descripcion" class="form-control" placeholder="Ingresa el nombre del género" />
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label>Portada del Género</label>
+                                    <div class="custom-file">
+                                        <input type="file" name="archivos" id="subidaArchivo" class="custom-file-input" onchange="updateFileName(this)">
+                                        <span class="custom-file-label" id="fileLabel">Ningún archivo seleccionado</span>
+                                    </div>
+                                    <span asp-validation-for="FotoGenero" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img id="imgLogo" style="max-width:200px;" src="@Model.FotoGenero" class="rounded" alt="Logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col text-start">
+                    <button type="submit" class="btn btn-primary">Editar Articulo</button>
+                    <a asp-action="Index" class="btn btn-success">Volver atrás</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }        
+    <script>
+        function updateFileName(input) {
+            let fileName = input.files.length > 0 ? input.files[0].name : "Ningún archivo seleccionado";
+            document.getElementById("fileLabel").textContent = fileName;
+        }
+    </script>
+}
+

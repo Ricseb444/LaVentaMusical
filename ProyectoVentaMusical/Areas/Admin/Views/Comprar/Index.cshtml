@@ -1,0 +1,103 @@
+﻿@model Models.ViewModels.CarritoVM
+@using Utilidades
+
+@{
+    ViewData["Title"] = "Catálogo de Canciones Disponibles";
+}
+
+<!-- Contenedor principal -->
+<div class="container my-5">
+
+    <!-- Título y sección superior con buscador y carrito -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h1 class="text-start">@ViewData["Title"]</h1>
+        </div>
+        <div class="col-md-6 text-end">
+            <!-- Form de búsqueda enlazado a Index del mismo controlador -->
+            <form asp-area="Admin" asp-controller="Comprar" asp-action="Index" method="get" class="d-inline-flex me-3">
+                <input type="search"
+                       name="objBuscar"
+                       class="form-control form-control-lg me-2"
+                       placeholder="Buscar canción..."
+                       value="@Context.Request.Query["objBuscar"]" />
+                <button class="btn btn-outline-primary btn-sm" type="submit">Buscar</button>
+            </form>
+            <!-- Carrito de compras ***************************************-->
+            <a class="btn btn-outline-dark btn-md" asp-area="Admin" asp-controller="Comprar" asp-action="CarritoCompras" id="btnCarrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (@ViewBag.CantidadEnCarrito)
+            </a>
+        </div>
+    </div>
+
+    <!-- Listado de canciones -->
+    <div class="row">
+        @foreach (var cancion in Model.ListaCanciones)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <!-- Imagen de la canción -->
+                    @if (!string.IsNullOrEmpty(cancion.fotoCancion))
+                    {
+                        <img src="@cancion.fotoCancion.Replace("\\","/")"
+                             class="card-img-top"
+                             alt="@cancion.NombreCancion"
+                             style="height: 250px; object-fit: cover;">
+                    }
+                    else
+                    {
+                        <div class="d-flex justify-content-center align-items-center bg-light"
+                             style="height: 250px;">
+                            <i class="fas fa-music fa-5x text-muted"></i>
+                        </div>
+                    }
+
+                    <!-- Cuerpo de la tarjeta -->
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">@cancion.NombreCancion</h5>
+
+                        <!-- Precio y cantidad disponible -->
+                        <p class="card-text">
+                            <span class="fw-bold">Precio:</span>
+                            <span class="text-black fs-5">@cancion.Precio.ToString("C")</span>
+                            <br />
+                            <span class="fw-bold">Disponibles:</span>
+                            <span class="text-black fs-5">@cancion.CantidadDisponible</span>
+                        </p>
+
+                        <!-- Indicador de stock -->
+                        <span class="badge @(cancion.CantidadDisponible > 0 ? "bg-primary" : "bg-danger") text-white"
+                              style="font-size: 1.2rem; padding: 0.5em 1em;">
+                            @(cancion.CantidadDisponible > 0 ? "En stock" : "Agotado")
+                        </span>
+                    </div>
+
+                    <!-- Pie de la tarjeta -->
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <form asp-action="anadirACarrito" asp-controller="Comprar" asp-area="Admin" method="post">
+                                <!-- Campos ocultos para enviar datos de la canción -->
+                                <input type="hidden" name="Cancion.CodigoCancion" value="@cancion.CodigoCancion" />
+                                <input type="hidden" name="Cancion.Precio" value="@cancion.Precio" />
+                                
+                                <!-- Campo para la cantidad a comprar (que se mapea a CarritoCompras.Cantidad) -->
+                                <div class="mb-2">
+                                    <label class="fw-bold">Cantidad:</label>
+                                    <input type="number" name="Cancion.CantidadDisponible" min="1" max="@cancion.CantidadDisponible" placeholder="1" required class="form-control" style="width: 130px; display: inline-block;" />
+                                </div>
+
+
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-shopping-cart"></i> Comprar
+                                </button>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

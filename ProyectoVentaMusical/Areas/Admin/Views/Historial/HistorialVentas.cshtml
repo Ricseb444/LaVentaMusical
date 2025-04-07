@@ -1,0 +1,188 @@
+﻿@using Utilidades 
+@model Models.ViewModels.HistorialMostrarVM
+@{
+	ViewData["Title"] = "Historial de Ventas";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Estilos {
+		<link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+			<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+				<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+				<link href="~/vendor/jquery-ui/jquery-ui.css" rel="stylesheet">
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+	<li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+	<li class="breadcrumb-item active">Historial de Ventas</li>
+</ol>
+
+@if (Model == null)
+{
+	<div class="card text-center">
+		<div class="card-body">
+			<i class="fas fa-shopping-cart fa-5x text-muted mb-3"></i>
+			<h5 class="card-title">Vaya, parece que...</h5>
+			<p class="card-text">Parece que hubo un error al cargar las ventas</p>
+		</div>
+		<div class="card-footer">
+			<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
+				<i class="fas fa-cart-plus me-2"></i>Comprar Canciones
+			</a>
+		</div>
+	</div>
+}
+else
+{
+
+	<div class="card shadow mb-4">
+		<div class="card-header py-3 bg-second-primary">
+			<h6 class="m-0 font-weight-bold text-white">Historial de Ventas</h6>
+		</div>
+		<div class="card-body">
+			<div class="form-row align-items-end">
+				@if(User.IsInRole(CNT.Contador))
+				{
+					<div class="form-group col-sm-3">
+						<label for="cboBuscarPor">Buscar por</label>
+						<select class="form-control form-control-sm" id="cboBuscarPor">
+							<option value="fecha">Fechas</option>
+							<option value="Usuario">Usuario</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-3 busqueda-fecha" style="display: none;">
+						<label for="fechaInicio">Fecha Inicio</label>
+						<input type="date" class="form-control form-control-sm" id="fechaInicio" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3 busqueda-fecha" style="display: none;">
+						<label for="fechaFin">Fecha Fin</label>
+						<input type="date" class="form-control form-control-sm" id="fechaFin" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3 busqueda-usuario" style="display: none;">
+						<label for="filtroUsuario">Usuario</label>
+						<input type="text" class="form-control form-control-sm" id="filtroUsuario" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3">
+						<button class="btn btn-success btn-block btn-sm" type="button" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
+					</div>
+				}
+				@if (User.IsInRole(CNT.Administrador))
+				{
+					<div class="form-group col-sm-3 busqueda-usuario" style="display: none;">
+						<label for="filtroUsuario">Usuario</label>
+						<input type="text" class="form-control form-control-sm" id="filtroUsuario" autocomplete="off">
+					</div>
+					<div class="form-group col-sm-3">
+						<button class="btn btn-success btn-block btn-sm" type="button" id="btnBuscar"><i class="fas fa-search"></i> Buscar</button>
+					</div>
+				}
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table table-sm table-striped" id="tbventa">
+						<thead>
+							<tr>
+								<th>Fecha Registro</th>
+								<th>Id Venta</th>
+								<th>Id Usuario</th>
+								<th>Tipo Pago</th>
+								<th>SubTotal</th>
+								<th>Total</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var venta in Model.Ventas)
+							{
+								<tr>
+									<td>@venta.FechaCompra?.ToString("yyyy-MM-dd")</td>
+									<td>@venta.IdVenta</td>
+									<td>@venta.IdUsuario</td>
+									<td>@venta.TipoPago</td>
+									<td>@venta.Subtotal.ToString("C")</td>
+									<td>@venta.Total.ToString("C")</td>
+									<td>
+										<button class="btn btn-info btn-sm" data-id="@venta.IdVenta" data-toggle="modal" data-target="#modalData">
+											<i class="fas fa-eye"></i> Ver Detalle
+										</button>
+										@* <button class="btn btn-info btn-sm" onclick="window.location.href='@Url.Action("PDFVenta", "Plantilla", new { IdVenta = venta.IdVenta })'">
+											<i class="fas fa-eye"></i> Ver Detalle
+										</button> *@
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--  Modal-->
+	<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h6>Detalle Venta</h6>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-12">
+										<table id="tbProductos" class="table table-sm table-striped">
+											<thead>
+												<tr>
+													<th>Id Venta</th>
+													<th>Canción</th>
+													<th>Cantidad</th>
+													<th>Precio</th>
+													<th>Total</th>
+												</tr>
+											</thead>
+											<tbody id="detalleVentaBody">
+												<!-- Se rellena dinamicamente con JS -->
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-primary btn-sm" target="_blank" id="linkImprimir">Imprimir</a>
+					<button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+@section Scripts {
+	<script>
+		var userRole = '@(User.IsInRole(CNT.Contador) ? "contador" : (User.IsInRole(CNT.Administrador) ? "administrador" : "ninguno"))';
+	</script>
+	<script src="~/js/Historial.js"></script>
+
+	<script src="~/vendor/jquery-ui/jquery-ui.js"></script>
+
+	<script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+	<script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+
+	<script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+}
+

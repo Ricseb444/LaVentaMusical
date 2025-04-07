@@ -1,0 +1,1 @@
+﻿document.getElementById('cantidad').max = cancion.CantidadDisponible;

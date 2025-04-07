@@ -1,0 +1,67 @@
+﻿@{
+	ViewData["Title"] = "Lista de Canciones";
+}
+
+@section Estilos {
+	<link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+	<link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+	<li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Administración</a></li>
+	<li class="breadcrumb-item active">Canciones</li>
+</ol>
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3 bg-second-primary">
+		<h6 class="m-0 font-weight-bold text-white">Lista de Canciones</h6>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create")'">
+					<i class="fas fa-plus-circle"></i> Crear Nueva Canción
+				</button>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-sm-12">
+				<table id="tblSongs" class="table table-striped table-bordered" style="width: 100%">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Genero</th>
+							<th>Album</th>
+							<th>Nombre Canción</th>
+							<th>Link Video</th>
+							<th>Precio</th>
+							<th>Cantidad Disponible</th>
+							<th>Imagen</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script src="~/js/canciones.js"></script>
+
+	<script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+	<script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+
+	<script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+	<script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+	<!-- SOLO ES DE EJEMPLO - IGNORAR -->
+	<script src="~/js/vistas/datatables-demo.js"></script>
+}
+

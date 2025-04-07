@@ -1,0 +1,137 @@
+﻿@model Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Crear Usuario"; // Título de la pestaña del navegador
+}
+
+<br />
+<br />
+<h3 class="text-center">Crear un nuevo usuario</h3>
+
+<form method="POST" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <!-- Mostrar resumen de errores de validación -->
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <!-- Campo: Número de Identificación -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="NumeroIdentificacion"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="NumeroIdentificacion" class="form-control" placeholder="Debe digitar el número de identificación" />
+                <span asp-validation-for="NumeroIdentificacion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Nombre de Usuario -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="UserName"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="UserName" class="form-control" placeholder="Debe digitar el nombre de usuario" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Género -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="Genero"></label>
+            </div>
+            <div class="col-8">
+                <select asp-for="Genero" class="form-control">
+                    <option value="">Seleccione un Género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Correo Electrónico -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="CorreoElectronico"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CorreoElectronico" class="form-control" placeholder="ejemplo@correo.com" />
+                <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Contraseña con validación HTML5 -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <label for="password">Contraseña</label>
+            <div class="col-8">
+                <input type="password" id="password" name="password" class="form-control"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+                       title="Debe contener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial."
+                       required />
+                <span class="text-danger small" id="passwordError"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Tipo de Tarjeta -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="TipoTarjeta"></label>
+            </div>
+            <div class="col-8">
+                <select asp-for="TipoTarjeta" class="form-control">
+                    <option value="">Seleccione un Tipo de tarjeta</option>
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="AmericanExpress">American Express</option>
+                </select>
+                <span asp-validation-for="TipoTarjeta" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Dinero Disponible -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="DineroDisponible"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DineroDisponible" class="form-control" value="0" />
+                <span asp-validation-for="DineroDisponible" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Campo: Número de Tarjeta con validación de formato 000-0000-0000-0000 -->
+        <div class="form-group row col-10 offset-1 mt-4">
+            <div class="col-4">
+                <label asp-for="NumeroTarjeta"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="NumeroTarjeta" class="form-control"
+                       placeholder="0000-0000-0000-0000"
+                       pattern="^\d{4}-\d{4}-\d{4}-\d{4}$"
+                       title="Formato de la tarjeta inválido. Debe ser 0000-0000-0000-0000"
+                       required />
+                <span asp-validation-for="NumeroTarjeta" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <br /><br /><br />
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary form-control">Crear Usuario</button>
+            </div>
+            &nbsp;
+            <div class="col">
+                <a asp-action="Index" class="btn btn-success form-control">Volver atrás</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Scripts para validación del lado del cliente -->
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
