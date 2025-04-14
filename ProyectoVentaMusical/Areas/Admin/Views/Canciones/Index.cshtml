@@ -42,7 +42,28 @@
 							<th>Acciones</th>
 						</tr>
 					</thead>
+					<tbody></tbody>
 				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal para vista previa -->
+<div class="modal fade" id="modalCancion" tabindex="-1" aria-labelledby="modalCancionLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header bg-primary text-white">
+				<h5 class="modal-title" id="modalCancionLabel">Vista previa de la canción</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+			</div>
+			<div class="modal-body">
+				<p><strong>Canción:</strong> <span id="nombreCancion"></span></p>
+				<p><strong>Álbum:</strong> <span id="nombreAlbum"></span></p>
+				<p><strong>Artista:</strong> <span id="nombreArtista"></span></p>
+				<div class="ratio ratio-16x9">
+					<iframe id="iframeVideo" allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -50,18 +71,62 @@
 
 @section Scripts {
 	<script src="~/js/canciones.js"></script>
-
 	<script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
 	<script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
-
 	<script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
 	<script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
 	<script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
 	<script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
 
-	<!-- SOLO ES DE EJEMPLO - IGNORAR -->
-	<script src="~/js/vistas/datatables-demo.js"></script>
+
+	<script>
+		// $(document).ready(function () {
+		// 	$('#tblSongs').DataTable({
+		// 		ajax: {
+		// 			url: '/Admin/Canciones/ObtenerCanciones',
+		// 			dataSrc: ''
+		// 		},
+		// 		columns: [
+		// 			{ data: 'codigoCancion' },
+		// 			{ data: 'codigoGeneroNavigation.nombreGenero' },
+		// 			{ data: 'codigoAlbumNavigation.nombreAlbum' },
+		// 			{ data: 'nombreCancion' },
+		// 			{
+		// 				data: 'codigoCancion',
+		// 				render: function (data) {
+		// 					return `
+		// 						<button class="btn btn-sm btn-danger" onclick="verVistaPrevia(${data})">
+		// 							<i class="fab fa-youtube"></i> Video
+		// 						</button>`;
+		// 				}
+		// 			},
+		// 			{ data: 'precio' },
+		// 			{ data: 'cantidadDisponible' },
+		// 			{
+		// 				data: 'fotoCancion',
+		// 				render: function (data) {
+		// 					return `<img src="${data.replace(/\\/g, "/")}" width="80"/>`;
+		// 				}
+		// 			},
+		// 			{
+		// 				data: 'codigoCancion',
+		// 				render: function (data) {
+		// 					return `
+		// 						<a href="/Admin/Canciones/Edit/${data}" class="btn btn-sm btn-warning">
+		// 							<i class="fas fa-edit"></i>
+		// 						</a>
+		// 						<button class="btn btn-sm btn-danger" onclick="eliminarCancion(${data})">
+		// 							<i class="fas fa-trash-alt"></i>
+		// 						</button>`;
+		// 				}
+		// 			}
+		// 		]
+		// 	});
+		// });
+	</script>
 }
+
+
+
 

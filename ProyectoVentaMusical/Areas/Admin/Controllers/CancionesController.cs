@@ -207,6 +207,39 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
 
             return Json(new { success = true, message = "Cancion Borrada Correctamente" });
         }
+
+        [HttpGet]
+        public IActionResult ObtenerCanciones()
+        {
+            var canciones = _context.Canciones
+                .Include(c => c.CodigoGeneroNavigation)
+                .Include(c => c.CodigoAlbumNavigation)
+                    .ThenInclude(a => a.CodigoArtistaNavigation)
+                .Select(c => new
+                {
+                    codigoCancion = c.CodigoCancion,
+                    nombreCancion = c.NombreCancion,
+                    linkVideo = c.LinkVideo,
+                    precio = c.Precio,
+                    cantidadDisponible = c.CantidadDisponible,
+                    fotoCancion = c.fotoCancion,
+                    codigoGeneroNavigation = new
+                    {
+                        nombreGenero = c.CodigoGeneroNavigation.Descripcion
+                    },
+                    codigoAlbumNavigation = new
+                    {
+                        nombreAlbum = c.CodigoAlbumNavigation.NombreAlbum,
+                        codigoArtistaNavigation = new
+                        {
+                            nombreArtistico = c.CodigoAlbumNavigation.CodigoArtistaNavigation.NombreArtistico
+                        }
+                    }
+                }).ToList();
+
+            return Json(canciones);
+        }
+
         #endregion
     }
 }

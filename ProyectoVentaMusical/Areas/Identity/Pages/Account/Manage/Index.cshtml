@@ -7,6 +7,7 @@
 
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
+
 <div class="row">
     <div class="col-md-6">
         <form id="profile-form" method="post">
@@ -25,6 +26,78 @@
     </div>
 </div>
 
+<h4 class="mt-5">Mis canciones</h4>
+
+<div class="mb-4">
+    <label for="filtroCanciones" class="form-label">Mostrar:</label>
+    <select class="form-select" id="filtroCanciones" onchange="filtrarCanciones(this.value)">
+        <option value="todas">Todas las canciones</option>
+        <option value="compradas">Mis compradas</option>
+        <option value="favoritas">Mis favoritas</option>
+    </select>
+</div>
+
+<table id="tablaCanciones" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Canción</th>
+            <th>Artista</th>
+            <th>Álbum</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Se llena dinámicamente con JavaScript -->
+    </tbody>
+</table>
+
+<!-- Modal para mostrar el video -->
+<div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="modalVideoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalVideoLabel">Información de la canción</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Canción:</strong> <span id="nombreCancion"></span></p>
+                <p><strong>Artista:</strong> <span id="nombreArtista"></span></p>
+                <p><strong>Álbum:</strong> <span id="nombreAlbum"></span></p>
+                <div class="ratio ratio-16x9">
+                    <iframe id="iframeVideo" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function filtrarCanciones(tipo) {
+            fetch(`/Identity/Account/Manage?handler=Canciones&tipo=${tipo}`)
+                .then(res => res.json())
+                .then(canciones => {
+                    const tbody = document.querySelector("#tablaCanciones tbody");
+                    tbody.innerHTML = "";
+
+                    canciones.forEach(c => {
+                        const fila = `
+                            <tr>
+                                <td>${c.nombreCancion}</td>
+                                <td>${c.nombreArtista}</td>
+                                <td>${c.nombreAlbum}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success" onclick="mostrarVideo(${c.id})">Ver video</button>
+                                </td>
+                            </tr>`;
+                        tbody.innerHTML += fila;
+                    });
+                });
+        }
+
+        // Cargar todas por defecto
+        document.addEventListener("DOMContentLoaded", () => filtrarCanciones("todas"));
+    </script>
 }

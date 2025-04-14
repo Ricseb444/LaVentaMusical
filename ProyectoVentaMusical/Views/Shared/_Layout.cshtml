@@ -6,232 +6,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<title>@ViewData["Title"] - ProyectoVentaMusical</title>
+    <title>@ViewData["Title"] - ProyectoVentaMusical</title>
 
-	<!-- Custom fonts for this template-->
-	<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">	
+    <!-- Custom fonts for this template-->
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Custom styles for this template-->
-	<link href="~/css/sb-admin-2.css" rel="stylesheet">
-	<link href="~/vendor/toastr/toastr.min.css" rel="stylesheet">
-	<link href="~/vendor/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.css" rel="stylesheet">
+    <link href="~/vendor/toastr/toastr.min.css" rel="stylesheet">
+    <link href="~/vendor/sweetalert/sweetalert.css" rel="stylesheet">
 
-	@* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
 
-	@await RenderSectionAsync("Estilos", required: false)
+    @await RenderSectionAsync("Estilos", required: false)
 </head>
 <body>
-	<!-- Page Wrapper -->
-	<div id="wrapper">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-		<!-- Sidebar -->
-		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-			<!-- Sidebar - Brand -->
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-				<div class="sidebar-brand-icon">
-					<i class="fas fa-music"></i>
-				</div>
-				<div class="sidebar-brand-text mx-3">LVM</div>
-			</a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">LVM</div>
+            </a>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-			<!-- Nav Item - Dashboard -->
-			<li class="nav-item">
-				<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-					<i class="fas fa-fw fa-home"></i>
-					<span>Inicio</span>
-				</a>
-			</li>
-			@if (User.IsInRole(CNT.Administrador))
-			{
-				<!-- Nav Item - Administración Collapse Menu -->
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministracion">
-						<i class="fas fa-fw fa-cog"></i>
-						<span>Administración</span>
-					</a>
-					<div id="collapseAdministracion" class="collapse" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" asp-area="Admin" asp-controller="Artistas" asp-action="Index">Artistas</a>
-							<a class="collapse-item" asp-area="Admin" asp-controller="Albumes" asp-action="Index">Albumes</a>
-							<a class="collapse-item" asp-area="Admin" asp-controller="Generos" asp-action="Index">Generos</a>
-							<a class="collapse-item" asp-area="Admin" asp-controller="Canciones" asp-action="Index">Canciones</a>
-						</div>
-					</div>
-				</li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            @if (User.IsInRole(CNT.Administrador))
+            {
+                <!-- Nav Item - Administración Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministracion">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Administración</span>
+                    </a>
+                    <div id="collapseAdministracion" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Artistas" asp-action="Index">Artistas</a>
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Albumes" asp-action="Index">Albumes</a>
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Generos" asp-action="Index">Generos</a>
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Canciones" asp-action="Index">Canciones</a>
+                        </div>
+                    </div>
+                </li>
 
-				<!-- Nav Item - Usuarios Collapse Menu -->
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios">
-						<i class="fas fa-fw fa-users"></i>
-						<span>Usuarios</span>
-					</a>
-					<div id="collapseUsuarios" class="collapse" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" asp-area="Admin" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
-						</div>
-					</div>
-				</li>
+                <!-- Nav Item - Usuarios Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Usuarios</span>
+                    </a>
+                    <div id="collapseUsuarios" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                        </div>
+                    </div>
+                </li>
 
-				<!-- Nav Item - Venta Collapse Menu -->
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
-						<i class="fas fa-fw fa-tags"></i>
-						<span>Ventas</span>
-					</a>
-					<div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas">Historial de Ventas</a>
-						</div>
-					</div>
-				</li>
-			}
-			@if (User.IsInRole(CNT.Contador))
-			{
-				<!-- Nav Item - Venta Collapse Menu -->
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
-						<i class="fas fa-fw fa-tags"></i>
-						<span>Ventas</span>
-					</a>
-					<div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas">Historial de Ventas</a>
-						</div>
-					</div>
-				</li>
-			}
-			@if (User.IsInRole(CNT.Usuario))
-			{
-				<!-- Nav Item - Venta Collapse Menu -->
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
-						<i class="fas fa-fw fa-shopping-cart"></i>
-						<span>Compras</span>
-					</a>
-					<div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" asp-area="Admin" asp-controller="Comprar" asp-action="CarritoCompras">Carrito Compras</a>
-							<a class="collapse-item" asp-area="Admin" asp-controller="Comprar" asp-action="Index">Comprar Canciones</a>
-							<a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialCompras">Historial de Compras</a>
-						</div>
-					</div>
-				</li>
-			}
-			<!-- Divider -->
-			<hr class="sidebar-divider">
-			<!-- Sidebar Toggler (Sidebar) -->
-			<div class="text-center d-none d-md-inline">
-				<button class="rounded-circle border-0" id="sidebarToggle"></button>
-			</div>
-		</ul>
-		<!-- End of Sidebar -->
-		<!-- Content Wrapper -->
-		<div id="content-wrapper" class="d-flex flex-column">
+                <!-- Nav Item - Venta Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
+                        <i class="fas fa-fw fa-tags"></i>
+                        <span>Ventas</span>
+                    </a>
+                    <div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas">Historial de Ventas</a>
+                        </div>
+                    </div>
+                </li>
+            }
+            @if (User.IsInRole(CNT.Contador))
+            {
+                <!-- Nav Item - Venta Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
+                        <i class="fas fa-fw fa-tags"></i>
+                        <span>Ventas</span>
+                    </a>
+                    <div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas">Historial de Ventas</a>
+                        </div>
+                    </div>
+                </li>
+            }
+            @if (User.IsInRole(CNT.Usuario))
+            {
+                <!-- Nav Item - Venta Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
+                        <i class="fas fa-fw fa-shopping-cart"></i>
+                        <span>Compras</span>
+                    </a>
+                    <div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Comprar" asp-action="CarritoCompras">Carrito Compras</a>
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Comprar" asp-action="Index">Comprar Canciones</a>
+                            <a class="collapse-item" asp-area="Admin" asp-controller="Historial" asp-action="HistorialCompras">Historial de Compras</a>
+                        </div>
+                    </div>
+                </li>
+            }
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-			<!-- Main Content -->
-			<div id="content">
+            <!-- Main Content -->
+            <div id="content">
 
-				<!-- Topbar -->
-				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-					<!-- Sidebar Toggle (Topbar) -->
-					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-						<i class="fa fa-bars"></i>
-					</button>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
-					<!-- Topbar Navbar -->
-					<ul class="navbar-nav ml-auto">						
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
 
-						<div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="topbar-divider d-none d-sm-block"></div>
 
-						@if (SignInManager.IsSignedIn(User))
-						{
-							<!-- Nav Item - User Information -->
-							<li class="nav-item dropdown no-arrow">
-								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<span class="mr-2 d-none d-lg-inline text-gray-600 small">@User.Identity?.Name</span>
-									<img class="img-profile rounded-circle" id="profileImage" src="" alt="Profile Image">
-								</a>
-								<!-- Dropdown - User Information -->
-								<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-									 aria-labelledby="userDropdown">
-									<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
-										<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-										Perfil
-									</a>
-									<div class="dropdown-divider"></div>
-									<form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
-										  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" >
-										<button type="submit" class="btn btn-link text-dark" style="text-decoration: none; padding: 0; font-size: 0.925rem;">
-											<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-											Salir
-										</button>
-									</form>
-								</div>
-							</li>
-						}
-						else 
-						{
-							<li class="nav-item">
-								<a class="nav-link text-gray-600" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link text-gray-600" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a>
-							</li>
-						}
-					</ul>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">@User.Identity?.Name</span>
+                                    <img class="img-profile rounded-circle" id="profileImage" src="" alt="Profile Image">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Perfil
+                                    </a>
+                                    <a class="dropdown-item" asp-area="Usuarios" asp-controller="Perfil" asp-action="Editar">
+                                        <i class="fas fa-id-card fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Editar datos personales
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"
+                                          asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
+                                        <button type="submit" class="btn btn-link text-dark" style="text-decoration: none; padding: 0; font-size: 0.925rem;">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Salir
+                                        </button>
+                                    </form>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-600" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
+                            </li>
 
-				</nav>
-				<!-- End of Topbar -->
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
-					@RenderBody()
-				</div>
-				<!-- /.container-fluid -->
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-600" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a>
+                            </li>
+                        }
+                    </ul>
 
-			</div>
-			<!-- End of Main Content -->
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; La Venta Musical 2025</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
 
-		</div>
-		<!-- End of Content Wrapper -->
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; La Venta Musical 2025</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
-	</div>
-	<!-- End of Page Wrapper -->
-	<!-- Bootstrap core JavaScript-->
-	<script src="~/vendor/jquery/jquery.min.js"></script>
-	<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        </div>
+        <!-- End of Content Wrapper -->
 
-	<!-- Core plugin JavaScript-->
-	<script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Custom scripts for all pages-->
-	<script src="~/js/sb-admin-2.js"></script>
-	<script src="~/vendor/toastr/toastr.min.js"></script>
-	<script src="~/vendor/sweetalert/sweetalert.js"></script>
-	<script src="~/vendor/loadingoverlay/loadingoverlay.min.js"></script>	
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-	@await RenderSectionAsync("Scripts", required: false)
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.js"></script>
+    <script src="~/vendor/toastr/toastr.min.js"></script>
+    <script src="~/vendor/sweetalert/sweetalert.js"></script>
+    <script src="~/vendor/loadingoverlay/loadingoverlay.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
+

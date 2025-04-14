@@ -80,3 +80,15 @@ C:\Users\marco\OneDrive\Escritorio\Progra Avanzada\Proyecto\LaVentaMusical-main\
 C:\Users\marco\OneDrive\Escritorio\Progra Avanzada\Proyecto\LaVentaMusical-main\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
 C:\Users\marco\OneDrive\Escritorio\Progra Avanzada\Proyecto\LaVentaMusical-main\Utilidades\obj\Debug\net8.0\Utilidades.pdb
 C:\Users\marco\OneDrive\Escritorio\Progra Avanzada\Proyecto\LaVentaMusical-main\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.deps.json
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.dll
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.pdb
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfoInputs.cache
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfo.cs
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.sourcelink.json
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.dll
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.pdb
+C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll

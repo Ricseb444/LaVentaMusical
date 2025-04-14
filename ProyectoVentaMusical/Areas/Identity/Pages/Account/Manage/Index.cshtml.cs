@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Models;
+using Models.Data;
 
 namespace ProyectoVentaMusical.Areas.Identity.Pages.Account.Manage
 {
@@ -17,13 +19,16 @@ namespace ProyectoVentaMusical.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ApplicationDbContext _context;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         /// <summary>
@@ -114,6 +119,62 @@ namespace ProyectoVentaMusical.Areas.Identity.Pages.Account.Manage
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnGetVideoAsync(int id)
+        {
+            var cancion = await _context.Canciones
+                .Include(c => c.CodigoAlbumNavigation)
+                    .ThenInclude(a => a.CodigoArtistaNavigation)
+                .Where(c => c.CodigoCancion == id)
+                .Select(c => new
+                {
+                    nombreCancion = c.NombreCancion,
+                    nombreAlbum = c.CodigoAlbumNavigation.NombreAlbum,
+                    nombreArtista = c.CodigoAlbumNavigation.CodigoArtistaNavigation.NombreArtistico,
+                    urlVideo = c.LinkVideo
+                })
+                .FirstOrDefaultAsync();
+
+            if (cancion == null)
+            {
+                return NotFound();
+            }
+
+            return new JsonResult(cancion);
+        }
+
+        public async Task<IActionResult> OnGetCancionesAsync(string tipo)
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            var query = _context.Canciones
+                .Include(c => c.CodigoAlbumNavigation)
+                    .ThenInclude(a => a.CodigoArtistaNavigation)
+                .AsQueryable();
+
+            if (tipo == "compradas")
+            {
+                query = query.Where(c =>
+                    c.DetalleVenta.Any(dv =>
+                        dv.IdVentaNavigation.IdUsuario == user.Id));
+            }
+            else if (tipo == "favoritas")
+            {
+                query = query.Where(c =>
+                    c.DetalleCarritos.Any(dc =>
+                        dc.IdCarritoNavigation.IdUsuario == user.Id));
+            }
+
+            var canciones = await query.Select(c => new
+            {
+                id = c.CodigoCancion,
+                nombreCancion = c.NombreCancion,
+                nombreAlbum = c.CodigoAlbumNavigation.NombreAlbum,
+                nombreArtista = c.CodigoAlbumNavigation.CodigoArtistaNavigation.NombreArtistico
+            }).ToListAsync();
+
+            return new JsonResult(canciones);
         }
     }
 }
