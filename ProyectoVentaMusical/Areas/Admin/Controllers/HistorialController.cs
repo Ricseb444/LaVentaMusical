@@ -8,6 +8,7 @@ using DinkToPdf;
 using DinkToPdf.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
+using Utilidades;
 
 namespace ProyectoVentaMusical.Areas.Admin.Controllers
 {
@@ -18,16 +19,18 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConverter _converter;
+        private readonly EmailSender _emailSender;
 
-        public HistorialController(ApplicationDbContext context, 
-            IWebHostEnvironment hostingEnvironment, 
+        public HistorialController(ApplicationDbContext context,
+            IWebHostEnvironment hostingEnvironment,
             UserManager<ApplicationUser> userManager,
-            IConverter converter)
+            IConverter converter, EmailSender emailSender)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
             _userManager = userManager;
             _converter = converter;
+            _emailSender = emailSender;
         }
 
         [HttpGet]
@@ -99,9 +102,9 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 //Canciones = canciones
             };
             return View(ViewModel);
-        }       
-        
-        public IActionResult MostrarPDFVenta(int IdVenta)
+        }
+
+        public async Task<IActionResult> MostrarPDFVenta(int IdVenta)
         {
             string urlPlantillaVista = $"{this.Request.Scheme}://{this.Request.Host}/Admin/Plantilla/PDFVenta?IdVenta={IdVenta}";
 
@@ -122,6 +125,25 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             };
 
             var archivoPDF = _converter.Convert(pdf);
+
+            var ventas = _context.Ventas
+                .FirstOrDefault(v => v.IdVenta == IdVenta);
+
+            var usuario = await _userManager.FindByIdAsync(ventas.IdUsuario);
+            var emailDestino = usuario?.Email;
+
+            if (!string.IsNullOrEmpty(emailDestino))
+            {
+                await _emailSender.SendEmailWithAttachmentAsync
+                     (
+                         emailDestino,
+                        "Factura de compra",
+                        "Hola, adjuntamos tu factura en PDF. Gracias por tu Compra",
+                        archivoPDF,
+                        "Factura.pdf"
+                    );
+            }
+
             return File(archivoPDF, "application/pdf");
         }
     }

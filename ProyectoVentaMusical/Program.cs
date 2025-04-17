@@ -6,6 +6,7 @@ using ProyectoVentaMusical.Data;
 using ProyectoVentaMusical.Utilidades.Extensiones;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using Utilidades;
 
 namespace ProyectoVentaMusical
 {
@@ -29,6 +30,11 @@ namespace ProyectoVentaMusical
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI();
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+            builder.Services.AddScoped<PdfGenerator>();
+
+            builder.Services.AddScoped<EmailSender>();
 
             var app = builder.Build();
 

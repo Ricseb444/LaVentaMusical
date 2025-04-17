@@ -214,6 +214,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             {
                 return BadRequest("No hay productos en el carrito.");
             }
+            
 
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
@@ -292,9 +293,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                     {
                         return Json(new { success = false, message = "Error al generar el ID de la venta" });
                     }
-
-                    return RedirectToAction("ConfirmacionCompra", new { idVenta = ventaNueva.IdVenta });
-
+                    return RedirectToAction("ConfirmacionCompra", "Comprar", new { idVenta = ventaNueva.IdVenta });
                 }
                 catch (Exception ex)
                 {
@@ -307,23 +306,9 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             //return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> ConfirmacionCompra(/*int idVenta*/)
+        public async Task<IActionResult> ConfirmacionCompra(int idVenta)
         {
-            //var venta = await _context.Ventas.FindAsync(idVenta); 
-            //var venta = await _context.Ventas.FirstOrDefaultAsync(v => v.IdVenta == idVenta);
-            //var venta = await _context.Ventas
-            //    .Where(v => v.IdVenta == idVenta)
-            //    .FirstOrDefaultAsync();
-            var userID = _userManager.GetUserId(User);
-            var venta = await _context.Ventas
-                .Where(v => v.IdUsuario == userID)  // Filtra por usuario
-                .OrderByDescending(v => v.FechaCompra)    // Ordena por fecha de compra (más reciente primero)
-                .FirstOrDefaultAsync();
-            if (venta == null)
-            {
-                return NotFound("Venta no encontrada");
-            }
-            return View(venta);
+            return RedirectToAction(nameof(Index));
         }
 
     }

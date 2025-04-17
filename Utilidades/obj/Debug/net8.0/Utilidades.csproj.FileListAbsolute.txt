@@ -92,3 +92,16 @@ C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaV
 C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
 C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.pdb
 C:\Users\Daniel\Documents\UAM\Programación Avanzada\ProyectoVentaMusical2.0\LaVentaMusical\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.deps.json
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.dll
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.pdb
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.csproj.AssemblyReference.cache
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfoInputs.cache
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfo.cs
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.csproj.CoreCompileInputs.cache
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.sourcelink.json
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.dll
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.pdb
+C:\Proyectos VisualStudio\LaVentaMusical\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll
