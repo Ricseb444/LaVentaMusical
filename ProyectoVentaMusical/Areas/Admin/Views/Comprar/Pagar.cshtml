@@ -4,7 +4,16 @@
     <div class="card shadow-sm">
         <div class="card-header py-3 bg-second-primary">
             <h6 class="m-0 font-weight-bold text-white">Selecciona un Método de Pago</h6>
+
+            <div class="mt-3 text-white">
+                <p><strong>Saldo disponible:</strong> @ViewBag.SaldoDisponible.ToString("C")</p>
+                <p><strong>Total a pagar:</strong> @Model.VENTAS.Total.ToString("C")</p>
+
+                <input type="hidden" id="saldoDisponible" value="@ViewBag.SaldoDisponible" />
+                <input type="hidden" id="totalAPagar" value="@Model.VENTAS.Total" />
+            </div>
         </div>
+
         <form method="POST" asp-action="ProcesarPago" id="paymentForm">
             <div class="card-body">
                 <div class="mb-3">
@@ -18,35 +27,13 @@
                         </select>
                     </div>
                 </div>
-
-               @*  <div id="creditCardInfo" class="mb-3" style="display:none;">
-                    <label class="form-label">Nombre del Titular</label>
-                    <input asp-for="VENTAS.NombreTitular" type="text" class="form-control mb-2" placeholder="Titular de la tarjeta" />
-
-                    <label class="form-label">Número de Tarjeta</label>
-                    <input asp-for="VENTAS.NumeroTarjeta" type="text" class="form-control mb-2" placeholder="Número de tarjeta" />
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="form-label">CVV</label>
-                            <input asp-for="VENTAS.CVV" type="text" class="form-control" placeholder="CVV" />
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Fecha de Expiración</label>
-                            <input asp-for="VENTAS.FechaExpiracion" type="month" class="form-control" />
-                        </div>
-                    </div>
-                </div> *@
-
-                <div id="sinpeInfo" class="mb-3" style="display:none;">
-                    <button type="submit" class="btn btn-success">Confirmar Pago SINPE</button>
-                </div>
             </div>
+
             <div class="card-footer">
                 <div class="row">
                     <div class="col text-start">
                         <button type="submit" class="btn btn-primary">Realizar Pago</button>
-                        <a asp-action="CarritoCompras" class="btn btn-success">Volver atras</a>
+                        <a asp-action="CarritoCompras" class="btn btn-success">Volver atrás</a>
                     </div>
                 </div>
             </div>
@@ -55,7 +42,46 @@
 </div>
 
 @section Scripts {
-    <!-- Carga SweetAlert2 desde un CDN alternativo -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
-    <script src="~/js/pagar.js"></script>
+    <script>
+        // Mostrar u ocultar campos según el tipo de pago seleccionado
+        document.getElementById("tipoPago").addEventListener("change", function () {
+            var tipoPago = this.value;
+            if (tipoPago === "Tarjeta de Crédito" || tipoPago === "Sinpe") {
+                // No necesitas realizar ninguna acción adicional
+            } else if (tipoPago === "Dinero Disponible") {
+                // Validaciones u otras acciones pueden ir aquí si se requieren
+            }
+        });
+
+        // Validar formulario antes de enviar
+        document.getElementById("paymentForm").addEventListener("submit", function (e) {
+            const saldoDisponible = parseFloat(document.getElementById("saldoDisponible").value);
+            const totalAPagar = parseFloat(document.getElementById("totalAPagar").value);
+            const tipoPago = document.getElementById("tipoPago").value;
+
+            // Validación de saldo para el pago con saldo disponible
+            if (tipoPago === "Dinero Disponible" && saldoDisponible < totalAPagar) {
+                e.preventDefault();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Saldo insuficiente',
+                    text: 'No tienes suficiente dinero disponible para realizar esta compra.'
+                });
+            } else {
+                // En caso de pago exitoso
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Compra realizada con éxito',
+                    text: '¡Tu pago ha sido procesado exitosamente!',
+                    confirmButtonText: 'Aceptar',
+                    background: '#e8f5e9', // Fondo verde suave
+                    color: '#388e3c', // Color de texto verde
+                    confirmButtonColor: '#388e3c' // Color del botón
+                }).then(() => {
+                    window.location.href = '/CarritoCompras'; // Redirige después de confirmar
+                });
+            }
+        });
+    </script>
 }

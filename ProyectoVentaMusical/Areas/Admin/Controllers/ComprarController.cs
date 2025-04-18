@@ -160,32 +160,44 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             var userId = _userManager.GetUserId(User);
             var user = await _userManager.FindByIdAsync(userId);
 
-            //Encontrar la venta para el usuario logueado
+            // Obtener el carrito activo del usuario
+            var carrito = await _context.CarritoCompras
+                .Include(c => c.DetalleCarritos)
+                .FirstOrDefaultAsync(c => c.IdUsuario == userId);
 
-            var venta = _context.Ventas.FirstOrDefault(v => v.IdUsuario == userId);
-
-            if (venta == null)
+            if (carrito == null)
             {
-                ViewBag.Message = "Debes ingresar carritos de compra a tu venta";
+                ViewBag.Message = "Tu carrito está vacío. ¡Añade canciones para comenzar a comprar!";
                 return View();
             }
 
-            var detalles = _context.DetalleVentas
-                .Include(dv => dv.CodigoCancionNavigation)
-                .Where(dv => dv.IdVenta == venta.IdVenta)
-                .ToList();
+            // Obtener detalles con navegación de canciones
+            var detalles = await _context.DetalleCarrito
+                .Include(dc => dc.CodigoCancionNavigation)
+                .Where(dc => dc.IdCarrito == carrito.IdCarrito)
+                .ToListAsync();
 
-            var canciones = detalles.Select(dv => dv.CodigoCancionNavigation).Distinct().ToList();
+            var canciones = detalles.Select(dc => dc.CodigoCancionNavigation).Distinct().ToList();
+
+            // Seteo del saldo actual del usuario
+            ViewBag.SaldoDisponible = user.DineroDisponible;
 
             var viewModel = new VentaMostrarVM
             {
-                VENTAS = venta,
-                DetalleVentas = detalles,
+                VENTAS = new Ventas
+                {
+                    Subtotal = carrito.Subtotal,
+                    Total = carrito.Total
+                },
+                DetalleVentas = new List<DetalleVentas>(), // vacía por ahora
                 ListaCanciones = canciones
             };
 
             return View(viewModel);
         }
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> ProcesarPago(VentaMostrarVM ventaVM)
@@ -198,6 +210,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 return NotFound("Usuario no encontrado.");
             }
 
+            // Obtener el carrito de compras del usuario
             var carritoCompras = await _context.CarritoCompras
                 .FirstOrDefaultAsync(c => c.IdUsuario == usuario.Id);
 
@@ -206,22 +219,42 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 return BadRequest("El carrito de compras está vacío.");
             }
 
+            // Obtener los detalles del carrito
             List<DetalleCarrito> LstDetalleCarritos = await _context.DetalleCarrito
-                .Where(d => d.IdCarrito == carritoCompras.IdCarrito)
+                .Where(d => d.IdCarrito == carritoCompras.IdCarrito)  
                 .ToListAsync();
 
             if (LstDetalleCarritos.Count == 0)
             {
                 return BadRequest("No hay productos en el carrito.");
             }
-            
 
+            decimal totalCompra = carritoCompras.Total;
+
+            // Procesar el pago según el tipo seleccionado
+            if (ventaVM.VENTAS.TipoPago == "Dinero Disponible")
+            {
+                if (usuario.DineroDisponible < totalCompra)
+                {
+                    return BadRequest("Saldo insuficiente.");
+                }
+                usuario.DineroDisponible -= totalCompra;
+            }
+            else if (ventaVM.VENTAS.TipoPago == "Tarjeta de Crédito" || ventaVM.VENTAS.TipoPago == "Sinpe")
+            {
+                
+            }
+            else
+            {
+                return BadRequest("Método de pago no válido.");
+            }
+
+          
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
                 {
-
-                    // Crear nueva venta
+                    // Crear la nueva venta
                     var ventaNueva = new Ventas()
                     {
                         IdUsuario = userId,
@@ -231,16 +264,19 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                         Total = carritoCompras.Total
                     };
 
+                    // Guardamos la nueva venta
                     await _context.Ventas.AddAsync(ventaNueva);
-                    await _context.SaveChangesAsync(); // Guardar la venta primero para obtener el IdVenta
+                    await _context.SaveChangesAsync(); // Guardamos para obtener el ID de la venta
                     Console.WriteLine($"Venta creada con ID: {ventaNueva.IdVenta}");
-                    // Crear lista de detalles de venta
+
+                    // Crear la lista de detalles de la venta
                     var listaDetalleVentas = new List<DetalleVentas>();
                     var codigosCanciones = LstDetalleCarritos.Select(x => x.CodigoCancion).ToList();
                     var canciones = await _context.Canciones
                         .Where(c => codigosCanciones.Contains(c.CodigoCancion))
                         .ToListAsync();
 
+                    // Procesar los detalles de la venta y las existencias
                     foreach (var item in LstDetalleCarritos)
                     {
                         listaDetalleVentas.Add(new DetalleVentas()
@@ -251,6 +287,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                             PrecioUnitario = item.PrecioUnitario,
                             Total = item.Total
                         });
+
                         var cancion = canciones.FirstOrDefault(c => c.CodigoCancion == item.CodigoCancion);
                         if (cancion != null)
                         {
@@ -263,50 +300,88 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                                 return BadRequest($"Stock insuficiente para la canción {cancion.NombreCancion}");
                             }
                         }
-
                     }
-                    // Guardar todos los cambios de las canciones en una sola operación
+
+                    // Actualizamos las canciones con los nuevos valores de cantidad disponible
                     _context.Canciones.UpdateRange(canciones);
                     await _context.SaveChangesAsync();
-                    // Guardar todos de una vez
+
+                    // Guardamos los detalles de la venta
                     await _context.DetalleVentas.AddRangeAsync(listaDetalleVentas);
                     await _context.SaveChangesAsync();
 
-
-
-
-                    // Si todo fue exitoso, confirmar la transacción y enviar json
+                    // Confirmamos la transacción
                     await transaction.CommitAsync();
 
-                    _context.RemoveRange(LstDetalleCarritos);
+                    // Limpiar el carrito de compras
+                    _context.DetalleCarrito.RemoveRange(LstDetalleCarritos);
                     await _context.SaveChangesAsync();
 
-                    _context.Remove(carritoCompras);
+                    // Eliminar el carrito de compras
+                    _context.CarritoCompras.Remove(carritoCompras);
                     await _context.SaveChangesAsync();
 
+                    // Responder correctamente si todo salió bien
                     if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                     {
                         return Json(new { success = true, message = "Pago Procesado con Éxito", idVenta = ventaNueva.IdVenta });
                     }
 
-                    if (ventaNueva.IdVenta <= 0)
-                    {
-                        return Json(new { success = false, message = "Error al generar el ID de la venta" });
-                    }
                     return RedirectToAction("ConfirmacionCompra", "Comprar", new { idVenta = ventaNueva.IdVenta });
                 }
                 catch (Exception ex)
                 {
-                    // Si hay un error, revertir la transacción
+                    // En caso de error, revertir los cambios
                     await transaction.RollbackAsync();
-                    //return StatusCode(500, "Ocurrió un error al procesar el pago: " + ex.Message);
-                    return Json(new { success = false, message = "Error al procesar el pago: " + ex.Message });
+                    return StatusCode(500, "Ocurrió un error al procesar el pago: " + ex.Message);
                 }
             }
-            //return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> ConfirmacionCompra(int idVenta)
+
+        [HttpGet]
+		public async Task<IActionResult> EliminarDelCarrito(int id)
+		{
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			var carrito = await _context.CarritoCompras
+				.FirstOrDefaultAsync(c => c.IdUsuario == userId);
+
+			if (carrito == null)
+			{
+				return Json(new { success = false, message = "Carrito no encontrado." });
+			}
+
+			var detalle = await _context.DetalleCarrito
+				.FirstOrDefaultAsync(d => d.IdCarrito == carrito.IdCarrito && d.IdDetalleCarrito == id);
+
+			if (detalle == null)
+			{
+				return Json(new { success = false, message = "Producto no encontrado en el carrito." });
+			}
+
+			_context.DetalleCarrito.Remove(detalle);
+			await _context.SaveChangesAsync();
+
+			// Recalcular totales
+			var nuevosDetalles = await _context.DetalleCarrito
+				.Where(d => d.IdCarrito == carrito.IdCarrito)
+				.ToListAsync();
+
+			carrito.Subtotal = nuevosDetalles.Sum(d => d.Total);
+			carrito.Total = carrito.Subtotal; // Si tenés impuestos, agregalos aquí
+
+			_context.CarritoCompras.Update(carrito);
+			await _context.SaveChangesAsync();
+
+			return Json(new { success = true, total = carrito.Total });
+		}
+
+
+
+
+
+
+		public async Task<IActionResult> ConfirmacionCompra(int idVenta)
         {
             return RedirectToAction(nameof(Index));
         }

@@ -1,26 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\",
+  "WorkspaceRootPath": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\proyectos visualstudio\\laventamusical\\proyectoventamusical\\areas\\admin\\controllers\\comprarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\controllers\\comprarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\proyectos visualstudio\\laventamusical\\proyectoventamusical\\areas\\admin\\views\\comprar\\pagar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\comprar\\pagar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\proyectos visualstudio\\laventamusical\\proyectoventamusical\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\proyectos visualstudio\\laventamusical\\proyectoventamusical\\wwwroot\\js\\pagar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\users\\valued customer\\desktop\\u sistemas\\prograavanzada\\proyecto0417\\laventamusical\\proyectoventamusical\\wwwroot\\js\\pagar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\wwwroot\\js\\pagar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\proyectos visualstudio\\laventamusical\\proyectoventamusical\\wwwroot\\js\\artistas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\wwwroot\\js\\artistas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\users\\valued customer\\desktop\\u sistemas\\prograavanzada\\proyecto0417\\laventamusical\\proyectoventamusical\\areas\\admin\\views\\comprar\\carritocompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\views\\comprar\\carritocompras.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|c:\\users\\valued customer\\desktop\\u sistemas\\prograavanzada\\proyecto0417\\laventamusical\\proyectoventamusical\\areas\\admin\\controllers\\historialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CBF3ADC-3BBD-4CFC-B7F1-7D575F8146D3}|ProyectoVentaMusical\\ProyectoVentaMusical.csproj|solutionrelative:proyectoventamusical\\areas\\admin\\controllers\\historialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,6 +46,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
@@ -62,67 +58,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "artistas.js",
-              "DocumentMoniker": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\artistas.js",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\wwwroot\\js\\artistas.js",
-              "ToolTip": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\artistas.js",
-              "RelativeToolTip": "ProyectoVentaMusical\\wwwroot\\js\\artistas.js",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAIwE8AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-17T21:22:08.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoVentaMusical\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAMkAAAAAAAAAAAAAANkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T21:21:16.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "pagar.js",
-              "DocumentMoniker": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
-              "ToolTip": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
-              "RelativeToolTip": "ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-17T21:06:03.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Pagar.cshtml",
-              "DocumentMoniker": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "ToolTip": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\Pagar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
+              "Title": "CarritoCompras.cshtml",
+              "DocumentMoniker": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
+              "ToolTip": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Views\\Comprar\\CarritoCompras.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T20:37:19.923Z",
+              "WhenOpened": "2025-04-18T05:37:18.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ComprarController.cs",
-              "DocumentMoniker": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\ComprarController.cs",
-              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\ComprarController.cs",
-              "ToolTip": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\ComprarController.cs",
-              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\ComprarController.cs",
-              "ViewState": "AQIAAAUBAAAAAAAAAAAhwCABAABcAAAA",
+              "Title": "pagar.js",
+              "DocumentMoniker": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
+              "ToolTip": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
+              "RelativeToolTip": "ProyectoVentaMusical\\wwwroot\\js\\pagar.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-17T22:10:02.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistorialController.cs",
+              "DocumentMoniker": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\HistorialController.cs",
+              "RelativeDocumentMoniker": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\HistorialController.cs",
+              "ToolTip": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\ProyectoVentaMusical\\Areas\\Admin\\Controllers\\HistorialController.cs",
+              "RelativeToolTip": "ProyectoVentaMusical\\Areas\\Admin\\Controllers\\HistorialController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAAAJAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T20:35:44.441Z",
+              "WhenOpened": "2025-04-17T22:13:05.092Z",
               "EditorCaption": ""
             }
           ]

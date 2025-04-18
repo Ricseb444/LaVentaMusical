@@ -3978,7 +3978,6 @@
       "path": "microsoft.win32.primitives/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4091,7 +4090,6 @@
       "path": "netstandard.library/1.6.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "netstandard.library.1.6.0.nupkg.sha512",
@@ -4236,7 +4234,6 @@
       "path": "runtime.native.system.security.cryptography/4.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -5278,7 +5275,6 @@
       "path": "system.globalization.extensions/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5471,7 +5467,6 @@
       "path": "system.io.compression.zipfile/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5743,7 +5738,6 @@
       "path": "system.net.http/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -5825,7 +5819,6 @@
       "path": "system.net.primitives/4.0.11",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5904,7 +5897,6 @@
       "path": "system.net.sockets/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6765,7 +6757,6 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7812,7 +7803,6 @@
       "path": "system.threading.timer/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8146,19 +8136,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\": {}
+    "C:\\Users\\Valued Customer\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
+      "projectUniqueName": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
       "projectName": "Utilidades",
-      "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
-      "packagesPath": "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\obj\\",
+      "projectPath": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
+      "packagesPath": "C:\\Users\\Valued Customer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Valued Customer\\Desktop\\U sistemas\\PrograAvanzada\\Proyecto0417\\LaVentaMusical\\Utilidades\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\JOSUE ARIAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Valued Customer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

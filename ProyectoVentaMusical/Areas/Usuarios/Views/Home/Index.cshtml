@@ -1,4 +1,5 @@
-﻿@using Models
+﻿// VISTA INDEX
+@using Models
 @using Utilidades
 @model IEnumerable<Models.Data.Canciones>
 @using Microsoft.AspNetCore.Identity
@@ -24,102 +25,46 @@
                                     <span>Has iniciado sesión como <strong>Administrador</strong>. Accede a las opciones avanzadas.</span>
                                 </p>
                                 <hr />
-                                <!-- Tarjeta: Administración de Artistas -->
                                 <div class="mb-4">
                                     <div class="card shadow">
                                         <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-microphone-alt"></i> Administración de Artistas
-                                            </h5>
+                                            <h5 class="card-title"><i class="fas fa-microphone-alt"></i> Administración de Artistas</h5>
                                             <p class="card-text">Gestiona artistas registrados en el sistema.</p>
                                             <a asp-area="Admin" asp-controller="Artistas" asp-action="Index" class="btn btn-success">Ir al Panel</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Tarjeta: Administración de Álbumes -->
                                 <div class="mb-4">
                                     <div class="card shadow">
                                         <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-record-vinyl"></i> Administración de Álbumes
-                                            </h5>
+                                            <h5 class="card-title"><i class="fas fa-record-vinyl"></i> Administración de Álbumes</h5>
                                             <p class="card-text">Crea y administra los álbumes musicales.</p>
                                             <a asp-area="Admin" asp-controller="Albumes" asp-action="Index" class="btn btn-success">Ir al Panel</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Tarjeta: Administración de Géneros Musicales -->
                                 <div class="mb-4">
                                     <div class="card shadow">
                                         <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-bookmark"></i> Géneros Musicales
-                                            </h5>
+                                            <h5 class="card-title"><i class="fas fa-bookmark"></i> Géneros Musicales</h5>
                                             <p class="card-text">Organiza y gestiona los géneros musicales.</p>
                                             <a asp-area="Admin" asp-controller="Generos" asp-action="Index" class="btn btn-success">Ir al Panel</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Tarjeta: Administración de Canciones -->
                                 <div class="mb-4">
                                     <div class="card shadow">
                                         <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-music"></i> Administración de Canciones
-                                            </h5>
+                                            <h5 class="card-title"><i class="fas fa-music"></i> Administración de Canciones</h5>
                                             <p class="card-text">Agrega, edita o elimina canciones.</p>
                                             <a asp-area="Admin" asp-controller="Canciones" asp-action="Index" class="btn btn-success">Ir al Panel</a>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Tarjeta: Administración de Usuarios -->
-                                <div class="mb-4">
-                                    <div class="card shadow">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-users"></i> Administración de Usuarios
-                                               </h5>
-                                            <p class="card-text">Gestiona las cuentas de los usuarios.</p>
-                                            <a asp-area="Admin" asp-controller="Usuarios" asp-action="Index" class="btn btn-success">Ir al Panel</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Tarjeta: Historial de Ventas -->
-                                <div class="mb-4">
-                                    <div class="card shadow">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-shopping-cart"></i> Historial de Ventas
-                                            </h5>
-                                            <p class="card-text">Consulta y gestiona el historial de ventas.</p>
-                                            <a asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas" class="btn btn-success">Ir al Panel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Tarjeta: Administración Crear Venta -->
-                                <div class="mb-4">
-                                    <div class="card shadow">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-record-vinyl"></i>Crear Venta
-                                            </h5>
-                                            <p class="card-text">Crea y administra una nueva venta.</p>
-                                            <a asp-area="Admin" asp-controller="Comprar" asp-action="Index" class="btn btn-success">Ir al Panel</a>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-
                             <div class="card-footer text-center text-muted">
                                 Sistema de Gestión | ProyectoVentaMusical
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -164,67 +109,63 @@
                             <div class="d-flex justify-content-between">
                                 @if (!string.IsNullOrEmpty(cancion.LinkVideo))
                                 {
-                                    <a href="@cancion.LinkVideo"
-                                       class="btn btn-outline-danger"
-                                       target="_blank">
+                                    <button class="btn btn-outline-danger" onclick="verVistaPrevia(@cancion.CodigoCancion)">
                                         <i class="fab fa-youtube"></i> Ver Video
-                                    </a>
-                                    if (User.IsInRole(CNT.Usuario))
+                                    </button>
+                                    @if (User.IsInRole(CNT.Usuario))
                                     {
                                         <a href="@Url.Action("Index", "Comprar", new { area = "Admin" })" class="btn btn-outline-success text-center">Comprar</a>
-
-
                                     }
                                 }
-                                <br />
-
                             </div>
                         </div>
                     </div>
                 </div>
             }
-
         </div>
-    }
-    @if (User.IsInRole(CNT.Contador))
-    {
-        <body class="bg-light">
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <div class="card shadow-lg">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h2>¡Bienvenido, @User.Identity?.Name!</h2>
-                            </div>
-                            <div class="card-body text-center">
-                                <p class="lead">
-                                    <span>Has iniciado sesión como <strong>Contador</strong>. Accede a las opciones de contaduría.</span>
-                                </p>
-                                <hr />
-                                <!-- Tarjeta: Historial de Ventas -->
-                                <div class="mb-4">
-                                    <div class="card shadow">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-shopping-cart"></i> Historial de Ventas
-                                            </h5>
-                                            <p class="card-text">Consulta y gestiona el historial de ventas.</p>
-                                            <a asp-area="Admin" asp-controller="Historial" asp-action="HistorialVentas" class="btn btn-success">Ir al Panel</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-
-                            <div class="card-footer text-center text-muted">
-                                Sistema de Gestión | ProyectoVentaMusical
-                            </div>
-
+        <!-- Modal para vista previa de la canción -->
+        <div class="modal fade" id="modalCancion" tabindex="-1" aria-labelledby="modalCancionLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="modalCancionLabel">Vista previa de la canción</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Canción:</strong> <span id="nombreCancion"></span></p>
+                        <p><strong>Álbum:</strong> <span id="nombreAlbum"></span></p>
+                        <p><strong>Artista:</strong> <span id="nombreArtista"></span></p>
+                        <div class="ratio ratio-16x9">
+                            <iframe id="iframeVideo" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        </body>
+        </div>
+
+        <script>
+            function verVistaPrevia(id) {
+                $.ajax({
+                    url: `/Usuarios/Home/ObtenerCancion?id=${id}`,
+                    type: 'GET',
+                    success: function (data) {
+                        $('#nombreCancion').text(data.nombreCancion);
+                        $('#nombreAlbum').text(data.nombreAlbum);
+                        $('#nombreArtista').text(data.nombreArtista);
+
+                        let url = data.urlVideo;
+                        if (url.includes("watch?v=")) {
+                            url = url.replace("watch?v=", "embed/");
+                        }
+                        $('#iframeVideo').attr('src', url);
+                        $('#modalCancion').modal('show');
+                    },
+                    error: function () {
+                        alert("No se pudo cargar la canción.");
+                    }
+                });
+            }
+        </script>
     }
 </div>

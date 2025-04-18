@@ -5,6 +5,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Carrito de Compras</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+	<style>
+		.bg-second-primary {
+			background-color: #1B396A !important;
+		}
+
+		.table thead th {
+			background-color: #1B396A;
+			color: white;
+			border-color: #1B396A;
+		}
+	</style>
 </head>
 
 <body>
@@ -16,8 +32,8 @@
 			<div class="card-body">
 				@if (Model != null && Model.DetalleCarrito != null && Model.DetalleCarrito.FirstOrDefault() != null)
 				{
-					<table class="table">
-						<thead class="thead-dark">
+					<table class="table" id="tablaCarrito">
+						<thead>
 							<tr>
 								<th>Nombre Cancion</th>
 								<th>Cantidad</th>
@@ -29,56 +45,136 @@
 						<tbody>
 							@foreach (var item in Model.DetalleCarrito)
 							{
-								<tr>
+								<tr id="fila-@item.IdDetalleCarrito">
 									<td>@item.CodigoCancionNavigation.NombreCancion</td>
 									<td>
 										<input type="number" class="form-control" value="@item.Cantidad" min="1" onchange="actualizarCantidad(@item.IdDetalleCarrito, this.value)" />
 									</td>
 									<td>@item.PrecioUnitario.ToString("C")</td>
-									<td>@($"₡{Math.Round(item.Cantidad * item.PrecioUnitario, 0)}")</td>
+									<td class="total-parcial">@($"₡{Math.Round(item.Cantidad * item.PrecioUnitario, 0)}")</td>
 									<td>
 										<button class="btn btn-danger" onclick="eliminarProducto(@item.IdDetalleCarrito)">Eliminar</button>
 									</td>
 								</tr>
 							}
 						</tbody>
-					</table>		
-					<div>
+					</table>
+					<div id="contenedorTotal">
 						<p><strong>Total:</strong> @Model.DetalleCarrito.Sum(item => item.Cantidad * item.PrecioUnitario).ToString("C")</p>
 					</div>
 				}
-				else
-				{
-					<div class="text-center">
-						<i class="fas fa-shopping-cart fa-5x text-muted mb-3"></i>
-						<h5 class="card-title">Vaya, parece que...</h5>
-						<p class="card-text">@ViewBag.Message</p>
-					</div>
-				}
+				<div class="text-center" id="mensajeVacio" style="display: none;">
+					<i class="fas fa-shopping-cart fa-5x text-muted mb-3"></i>
+					<h5 class="card-title">Vaya, parece que no tienes nada en el carrito...</h5>
+					<p class="card-text">@ViewBag.Message</p>
+					<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
+						<i class="fas fa-cart-plus me-2"></i>Añadir canciones al carrito
+					</a>
+				</div>
 			</div>
-			<div class="card-footer text-center">
+			<div class="card-footer text-center" id="footerBotones">
 				<div class="row">
 					<div class="col text-start">
-						@if (Model != null && Model.DetalleCarrito != null && Model.DetalleCarrito.FirstOrDefault() != null)
-						{
-							<div class="text start">								
-								<button class="btn btn-success" onclick="window.location.href='@Url.Action("Pagar", "Comprar")'">Proceder al Pago</button>
-								<button class="btn btn-primary" onclick="window.location.href='@Url.Action("Index", "Comprar")'">Seguir Comprando</button>
-							</div>							
-						}
-						else 
-						{ 
-							<a href="@Url.Action("Index", "Comprar")" class="btn btn-primary">
-								<i class="fas fa-cart-plus me-2"></i>Añadir canciones al carrito
-							</a>
-						}
+						<button class="btn btn-success" onclick="window.location.href='@Url.Action("Pagar", "Comprar")'">Proceder al Pago</button>
+						<button class="btn btn-primary" onclick="window.location.href='@Url.Action("Index", "Comprar")'">Seguir Comprando</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		
-
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Confirmar Eliminación</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					¿Estás seguro de que deseas eliminar este producto del carrito?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-danger" id="btnEliminarProducto">Eliminar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var idProductoAEliminar = null;
+
+		function eliminarProducto(idDetalle) {
+			idProductoAEliminar = idDetalle;
+			$('#confirmarEliminacionModal').modal('show');
+		}
+
+		$('#btnEliminarProducto').click(function () {
+			if (idProductoAEliminar !== null) {
+				$.ajax({
+					url: '@Url.Action("EliminarDelCarrito", "Comprar")/' + idProductoAEliminar,
+					type: 'GET',
+					success: function (result) {
+						if (result.success) {
+							$('#confirmarEliminacionModal').modal('hide');
+							$('#fila-' + idProductoAEliminar).fadeOut('slow', function () {
+								$(this).remove();
+								actualizarTotalCarrito();
+								if ($('#tablaCarrito tbody tr').length === 0) {
+									$('#tablaCarrito').hide();
+									$('#contenedorTotal').hide();
+									$('#footerBotones').hide();
+									$('#mensajeVacio').show();
+								}
+							});
+						} else {
+							alert("No se pudo eliminar el producto.");
+						}
+					},
+					error: function () {
+						alert("Error al intentar eliminar el producto.");
+					}
+				});
+			}
+		});
+
+		function actualizarCantidad(idDetalle, nuevaCantidad) {
+			$.ajax({
+				url: '@Url.Action("ActualizarCantidad", "Comprar")',
+				type: 'POST',
+				data: { idDetalle: idDetalle, nuevaCantidad: nuevaCantidad },
+				success: function (result) {
+					if (result.success) {
+						const precioUnitario = result.precioUnitario;
+						const nuevoTotal = Math.round(precioUnitario * nuevaCantidad);
+						const celdaTotal = $(`#fila-${idDetalle} .total-parcial`);
+						celdaTotal.text(`₡${nuevoTotal.toLocaleString('es-CR')}`);
+						actualizarTotalCarrito();
+					}
+				}
+			});
+		}
+
+		function actualizarTotalCarrito() {
+			let total = 0;
+			$('#tablaCarrito tbody tr').each(function () {
+				const totalParcialText = $(this).find('.total-parcial').text().replace(/[₡,]/g, '');
+				const totalParcial = parseFloat(totalParcialText) || 0;
+				total += totalParcial;
+			});
+			const totalFormateado = '₡' + total.toLocaleString('es-CR');
+			$('#contenedorTotal').html(`<p><strong>Total:</strong> ${totalFormateado}</p>`);
+		}
+
+		$(document).ready(function () {
+			if ($('#tablaCarrito tbody tr').length === 0) {
+				$('#mensajeVacio').show();
+				$('#footerBotones').hide();
+			}
+		});
+	</script>
 </body>
 </html>
