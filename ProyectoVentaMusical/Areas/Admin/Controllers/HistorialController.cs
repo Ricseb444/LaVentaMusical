@@ -77,7 +77,9 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                     Cancion = dv.CodigoCancionNavigation.NombreCancion,
                     dv.Cantidad,
                     dv.PrecioUnitario,
-                    Total = dv.Cantidad * dv.PrecioUnitario
+                    Subtotal = dv.Cantidad * dv.PrecioUnitario,
+                    IVA = Math.Round(dv.Cantidad * dv.PrecioUnitario * 0.13m, 2),
+                    TotalConIVA = Math.Round(dv.Cantidad * dv.PrecioUnitario * 1.13m, 2)
                 }).ToListAsync();
 
             return Json(detalles);

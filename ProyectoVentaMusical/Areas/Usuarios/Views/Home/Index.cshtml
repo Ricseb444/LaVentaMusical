@@ -1,4 +1,4 @@
-﻿// VISTA INDEX
+﻿
 @using Models
 @using Utilidades
 @model IEnumerable<Models.Data.Canciones>
@@ -58,6 +58,17 @@
                                             <h5 class="card-title"><i class="fas fa-music"></i> Administración de Canciones</h5>
                                             <p class="card-text">Agrega, edita o elimina canciones.</p>
                                             <a asp-area="Admin" asp-controller="Canciones" asp-action="Index" class="btn btn-success">Ir al Panel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="card shadow">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">
+                                                <i class="fas fa-record-vinyl"></i>Crear Venta
+                                            </h5>
+                                            <p class="card-text">Crea y administra una nueva venta.</p>
+                                            <a asp-area="Admin" asp-controller="Comprar" asp-action="Index" class="btn btn-success">Ir al Panel</a>
                                         </div>
                                     </div>
                                 </div>

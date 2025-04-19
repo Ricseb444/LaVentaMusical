@@ -45,9 +45,16 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
 
             var canciones = detalles.Select(dv => dv.CodigoCancionNavigation).Distinct().ToList();
 
+            var subtotal = ventas.Subtotal;
+            var iva = Math.Round(subtotal * 0.13m, 2);
+            var totalConIva = Math.Round(subtotal + iva, 2);
+
+
             viewModel.Venta = ventas;
             viewModel.DetalleVentas = detalles;
-            viewModel.Canciones = detalles.Select(dv => dv.CodigoCancionNavigation).Distinct().ToList();
+            viewModel.Canciones = canciones;
+            viewModel.IVA = iva;
+            viewModel.TotalConIVA = totalConIva;
 
             return View(viewModel);
         }

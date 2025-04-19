@@ -14,6 +14,12 @@
             </div>
         </div>
 
+        <!-- Número de tarjeta guardado -->
+        <input type="hidden" id="numeroTarjeta" value="@ViewBag.NumeroTarjeta" />
+    </div>
+</div>
+
+
         <form method="POST" asp-action="ProcesarPago" id="paymentForm">
             <div class="card-body">
                 <div class="mb-3">
@@ -28,6 +34,16 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- Mostrar número de tarjeta censurado -->
+            <div class="mb-3" id="tarjetaContainer" style="display:none;">
+                <label class="form-label">Número de tarjeta guardada</label>
+                <p id="tarjetaCensurada" class="form-control"></p>
+            </div>
+    </div>
+
 
             <div class="card-footer">
                 <div class="row">
@@ -44,6 +60,25 @@
 @section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
     <script>
+
+               // Mostrar u ocultar campos según el tipo de pago seleccionado
+        document.getElementById("tipoPago").addEventListener("change", function () {
+            var tipoPago = this.value;
+            var tarjetaContainer = document.getElementById("tarjetaContainer");
+            var tarjetaCensurada = document.getElementById("tarjetaCensurada");
+            var numeroTarjeta = document.getElementById("numeroTarjeta").value;
+
+            if (tipoPago === "Tarjeta de Crédito") {
+                // Mostrar el número de tarjeta censurado (primeros dígitos ocultos)
+                var censurada = "**** **** **** " + numeroTarjeta.slice(-4);
+                tarjetaCensurada.textContent = censurada;
+                tarjetaContainer.style.display = "block";
+            } else {
+                tarjetaContainer.style.display = "none";
+            }
+        });
+
+
         // Mostrar u ocultar campos según el tipo de pago seleccionado
         document.getElementById("tipoPago").addEventListener("change", function () {
             var tipoPago = this.value;

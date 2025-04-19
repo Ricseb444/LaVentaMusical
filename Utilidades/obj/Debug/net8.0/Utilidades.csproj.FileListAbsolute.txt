@@ -118,3 +118,16 @@ C:\Users\Valued Customer\Desktop\U sistemas\PrograAvanzada\Proyecto0417\LaVentaM
 C:\Users\Valued Customer\Desktop\U sistemas\PrograAvanzada\Proyecto0417\LaVentaMusical\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
 C:\Users\Valued Customer\Desktop\U sistemas\PrograAvanzada\Proyecto0417\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.pdb
 C:\Users\Valued Customer\Desktop\U sistemas\PrograAvanzada\Proyecto0417\LaVentaMusical\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.deps.json
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.dll
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\bin\Debug\net8.0\Utilidades.pdb
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.csproj.AssemblyReference.cache
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfoInputs.cache
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.AssemblyInfo.cs
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.csproj.CoreCompileInputs.cache
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.sourcelink.json
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.dll
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\refint\Utilidades.dll
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\Utilidades.pdb
+C:\Users\Jeikel\Documents\GitHub\LaVentaMusical-Jeison\LaVentaMusical\Utilidades\obj\Debug\net8.0\ref\Utilidades.dll

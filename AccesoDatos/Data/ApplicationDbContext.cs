@@ -33,7 +33,7 @@ namespace Models.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #warning Revisa la cadena de conexión para no exponer información sensible.
-            optionsBuilder.UseSqlServer("Server=DESKTOP-22VIRD6;Database=LaVentaMusical;User ID=sa;Password=Jebermo270700@;Trusted_Connection=true;Encrypt=false;MultipleActiveResultSets=true;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Server=localhost\\Jeikel;Database=LaVentaMusical;User ID=sa;Password=123;Trusted_Connection=true;Encrypt=false;MultipleActiveResultSets=true;Trust Server Certificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -111,19 +111,21 @@ $(document).ready(function () {
 				return;
 			}
 
-			data.forEach(function (detalle) {
-				console.log("Procesando detalle:", detalle); // Muestra cada objeto en la consola
+            data.forEach(function (detalle) {
+                console.log("Procesando detalle:", detalle); // Muestra cada objeto en la consola
 
-				let row = `<tr>
-					<td>${detalle.idVenta}</td>
-					<td>${detalle.cancion}</td>
-					<td>${detalle.cantidad}</td>
-					<td>${detalle.precioUnitario.toFixed(2)}</td>
-					<td>${detalle.total.toFixed(2)}</td>
-				</tr>`;
+                let row = `<tr>
+		<td>${detalle.idVenta}</td>
+		<td>${detalle.cancion}</td>
+		<td>${detalle.cantidad}</td>
+		<td>${detalle.precioUnitario.toFixed(2)}</td>
+		<td>${detalle.subtotal.toFixed(2)}</td>
+		<td>${detalle.iva.toFixed(2)}</td>
+		<td>${detalle.totalConIVA.toFixed(2)}</td>
+	</tr>`;
 
-				tbody.append(row);
-			});
+                tbody.append(row);
+            });
 
 			console.log("Tabla actualizada.");
 		}).fail(function (xhr, status, error) {

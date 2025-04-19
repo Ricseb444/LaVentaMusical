@@ -182,6 +182,25 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             // Seteo del saldo actual del usuario
             ViewBag.SaldoDisponible = user.DineroDisponible;
 
+
+            string tarjetaCensurada = string.IsNullOrEmpty(user.NumeroTarjeta) || user.NumeroTarjeta.Length < 4
+        ? ""
+        : "**** **** **** " + user.NumeroTarjeta[^4..];
+            ViewBag.TarjetaCensurada = tarjetaCensurada;
+
+            // Recuperar el número de tarjeta desde el modelo de usuario
+            var numeroTarjeta = user.NumeroTarjeta;
+
+            // Pasa el número de tarjeta a la vista
+            ViewBag.NumeroTarjeta = numeroTarjeta;
+
+
+
+
+
+
+
+
             var viewModel = new VentaMostrarVM
             {
                 VENTAS = new Ventas
@@ -261,7 +280,7 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                         FechaCompra = DateTime.Now,
                         TipoPago = ventaVM.VENTAS.TipoPago,
                         Subtotal = carritoCompras.Subtotal,
-                        Total = carritoCompras.Total
+                        Total  = Math.Round(carritoCompras.Subtotal + Math.Round(carritoCompras.Subtotal * 0.13m, 2), 2)
                     };
 
                     // Guardamos la nueva venta
