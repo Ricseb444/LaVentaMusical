@@ -20,40 +20,40 @@
 </div>
 
 
-        <form method="POST" asp-action="ProcesarPago" id="paymentForm">
-            <div class="card-body">
-                <div class="mb-3">
-                    <div class="col-sm-6">
-                        <label asp-for="VENTAS.TipoPago" class="form-label">Tipo de Pago</label>
-                        <select class="form-control" asp-for="VENTAS.TipoPago" id="tipoPago" required>
-                            <option value="" selected disabled>Selecciona método</option>
-                            <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-                            <option value="Sinpe">Sinpe</option>
-                            <option value="Dinero Disponible">Dinero Disponible</option>
-                        </select>
-                    </div>
-                </div>
+<form method="POST" asp-action="ProcesarPago" id="paymentForm">
+    <div class="card-body">
+        <div class="mb-3">
+            <div class="col-sm-6">
+                <label asp-for="VENTAS.TipoPago" class="form-label">Tipo de Pago</label>
+                <select class="form-control" asp-for="VENTAS.TipoPago" id="tipoPago" required>
+                    <option value="" selected disabled>Selecciona método</option>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Dinero Disponible">Dinero Disponible</option>
+                </select>
             </div>
-
-
-
-            <!-- Mostrar número de tarjeta censurado -->
-            <div class="mb-3" id="tarjetaContainer" style="display:none;">
-                <label class="form-label">Número de tarjeta guardada</label>
-                <p id="tarjetaCensurada" class="form-control"></p>
-            </div>
+        </div>
     </div>
 
 
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col text-start">
-                        <button type="submit" class="btn btn-primary">Realizar Pago</button>
-                        <a asp-action="CarritoCompras" class="btn btn-success">Volver atrás</a>
-                    </div>
-                </div>
+
+    <!-- Mostrar número de tarjeta censurado -->
+    <div class="mb-3" id="tarjetaContainer" style="display:none;">
+        <label class="form-label">Número de tarjeta guardada</label>
+        <p id="tarjetaCensurada" class="form-control"></p>
+    </div>
+    </div>
+
+
+    <div class="card-footer">
+        <div class="row">
+            <div class="col text-start">
+                <button type="submit" class="btn btn-primary">Realizar Pago</button>
+                <a asp-action="CarritoCompras" class="btn btn-success">Volver atrás</a>
             </div>
-        </form>
+        </div>
+    </div>
+</form>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
     <script>
 
-               // Mostrar u ocultar campos según el tipo de pago seleccionado
+        // Mostrar u ocultar campos según el tipo de pago seleccionado
         document.getElementById("tipoPago").addEventListener("change", function () {
             var tipoPago = this.value;
             var tarjetaContainer = document.getElementById("tarjetaContainer");
@@ -79,15 +79,15 @@
         });
 
 
-        // Mostrar u ocultar campos según el tipo de pago seleccionado
-        document.getElementById("tipoPago").addEventListener("change", function () {
-            var tipoPago = this.value;
-            if (tipoPago === "Tarjeta de Crédito" || tipoPago === "Sinpe") {
-                // No necesitas realizar ninguna acción adicional
-            } else if (tipoPago === "Dinero Disponible") {
-                // Validaciones u otras acciones pueden ir aquí si se requieren
-            }
-        });
+        // // Mostrar u ocultar campos según el tipo de pago seleccionado
+        // document.getElementById("tipoPago").addEventListener("change", function () {
+        //     var tipoPago = this.value;
+        //     if (tipoPago === "Tarjeta de Crédito" || tipoPago === "PayPal") {
+        //         // No necesitas realizar ninguna acción adicional
+        //     } else if (tipoPago === "Dinero Disponible") {
+        //         // Validaciones u otras acciones pueden ir aquí si se requieren
+        //     }
+        // });
 
         // Validar formulario antes de enviar
         document.getElementById("paymentForm").addEventListener("submit", function (e) {

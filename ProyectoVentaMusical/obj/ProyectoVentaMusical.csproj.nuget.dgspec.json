@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj": {}
+    "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj": {
+    "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj",
+        "projectUniqueName": "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj",
         "projectName": "AccesoDatos",
-        "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj",
-        "packagesPath": "C:\\Users\\Jeikel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\obj\\",
+        "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj",
+        "packagesPath": "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jeikel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JOSUE ARIAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,17 +22,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\Models.csproj"
+              "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\Models.csproj": {
+                "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\Models.csproj"
               },
-              "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\Utilidades.csproj": {
-                "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\Utilidades.csproj"
+              "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj": {
+                "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj"
               }
             }
           }
@@ -50,8 +47,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -92,25 +88,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\Models.csproj": {
+    "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Jeikel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Models\\obj\\",
+        "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jeikel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JOSUE ARIAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -118,6 +110,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -135,8 +128,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -167,25 +159,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj": {
+    "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj",
+        "projectUniqueName": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj",
         "projectName": "ProyectoVentaMusical",
-        "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj",
-        "packagesPath": "C:\\Users\\Jeikel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\ProyectoVentaMusical\\obj\\",
+        "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\ProyectoVentaMusical.csproj",
+        "packagesPath": "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\ProyectoVentaMusical\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jeikel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JOSUE ARIAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -193,14 +181,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj": {
-                "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj"
+              "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj": {
+                "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\AccesoDatos\\AccesoDatos.csproj"
               }
             }
           }
@@ -214,8 +203,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -281,25 +269,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\Utilidades.csproj": {
+    "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
+        "projectUniqueName": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
         "projectName": "Utilidades",
-        "projectPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
-        "packagesPath": "C:\\Users\\Jeikel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeikel\\Documents\\GitHub\\LaVentaMusical-Jeison\\LaVentaMusical\\Utilidades\\obj\\",
+        "projectPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\Utilidades.csproj",
+        "packagesPath": "C:\\Users\\JOSUE ARIAS\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos VisualStudio\\LaVentaMusical\\Utilidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jeikel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JOSUE ARIAS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -307,6 +291,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -324,8 +309,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -360,7 +344,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="Font.Awesome" Version="5.15.4" />
@@ -21,10 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Conta\Controllers\" />
-    <Folder Include="Areas\Conta\Models\" />
     <Folder Include="Areas\Usuarios\Models\" />
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\imagenes\artistas\" />
     <Folder Include="wwwroot\imagenes\albumes\" />
     <Folder Include="wwwroot\imagenes\canciones\" />

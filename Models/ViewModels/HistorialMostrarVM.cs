@@ -12,5 +12,6 @@ namespace Models.ViewModels
         public IEnumerable<Ventas> Ventas { get; set;}
         public IEnumerable<DetalleVentas> DetalleVentas { get; set;}
         public IEnumerable<Canciones> Canciones { get; set;}
+        public bool EsMenorA24Horas { get; set; }
     }
 }

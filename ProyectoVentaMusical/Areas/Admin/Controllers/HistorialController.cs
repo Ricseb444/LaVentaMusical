@@ -9,6 +9,7 @@ using DinkToPdf.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 using Utilidades;
+using NuGet.Protocol.Plugins;
 
 namespace ProyectoVentaMusical.Areas.Admin.Controllers
 {
@@ -96,10 +97,11 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
             //    .ToList();
 
             //var canciones = detalles.Select(dv => dv.CodigoCancionNavigation).Distinct().ToList();
+            
 
             var ViewModel = new HistorialMostrarVM
             {
-                Ventas = ventas,
+                Ventas = ventas
                 //DetalleVentas = detalles,
                 //Canciones = canciones
             };
@@ -148,5 +150,53 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
 
             return File(archivoPDF, "application/pdf");
         }
+
+
+        public async Task<IActionResult> ReversarCompra(int id)
+        {
+            var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var venta = await _context.Ventas.FirstOrDefaultAsync(x => x.IdVenta == id);
+
+                decimal dinero = venta.Subtotal;
+
+
+                var Idusuario = venta.IdUsuario;
+
+                var usuarioBD = await _context.applicationUsers.FirstOrDefaultAsync(u => u.Id == venta.IdUsuario);
+
+                usuarioBD.DineroDisponible += dinero;
+
+
+                usuarioBD.DineroDisponible += dinero;
+                await _context.SaveChangesAsync();
+
+                List<DetalleVentas> Detalles = await _context.DetalleVentas
+                    .Where(d => d.IdVenta == venta.IdVenta)
+                    .ToListAsync();
+
+                foreach (var item in Detalles)
+                {
+                    //colocar canciones
+                    _context.DetalleVentas.Remove(item);
+                }
+
+                _context.Ventas.Remove(venta);
+
+                await _context.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+
+                return RedirectToAction(nameof(HistorialVentas));
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                return StatusCode(500, "Ocurrió un error al intentar revertir la compra.");
+            }            
+        }
+
+
     }
 }

@@ -259,14 +259,14 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 }
                 usuario.DineroDisponible -= totalCompra;
             }
-            else if (ventaVM.VENTAS.TipoPago == "Tarjeta de Crédito" || ventaVM.VENTAS.TipoPago == "Sinpe")
-            {
-                
-            }
-            else
-            {
-                return BadRequest("Método de pago no válido.");
-            }
+            //else if (ventaVM.VENTAS.TipoPago == "Tarjeta de Crédito" || ventaVM.VENTAS.TipoPago == "Paypal")
+            //{
+
+            //}
+            //else
+            //{
+            //    return BadRequest("Método de pago no válido.");
+            //}
 
           
             using (var transaction = await _context.Database.BeginTransactionAsync())
