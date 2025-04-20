@@ -167,9 +167,6 @@ namespace ProyectoVentaMusical.Areas.Admin.Controllers
                 var usuarioBD = await _context.applicationUsers.FirstOrDefaultAsync(u => u.Id == venta.IdUsuario);
 
                 usuarioBD.DineroDisponible += dinero;
-
-
-                usuarioBD.DineroDisponible += dinero;
                 await _context.SaveChangesAsync();
 
                 List<DetalleVentas> Detalles = await _context.DetalleVentas
